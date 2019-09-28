@@ -1,5 +1,32 @@
 * {
   margin: 0;
   padding: 0;
-}
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  color: #373737;
+  box-sizing: border-box; }
+
+.firstPeriod {
+  background-color: rgba(64, 221, 127, 0.55);
+  width: 32%; }
+
+.secondPeriod {
+  background-color: rgba(237, 194, 43, 0.55);
+  width: 48%; }
+
+.thirdPeriod {
+  background-color: rgba(248, 120, 3, 0.55);
+  width: 64%; }
+
+.fourthPeriod {
+  background-color: rgba(243, 0, 0, 0.55);
+  width: 96%; }
+
+::-webkit-scrollbar {
+  display: none; }
+
+button {
+  cursor: pointer;
+  border: none; }
+
 /*# sourceMappingURL=global.css.map */

@@ -1,4 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  color: #373737;
+  box-sizing: border-box; }
+
+.firstPeriod {
+  background-color: rgba(64, 221, 127, 0.55);
+  width: 32%; }
+
+.secondPeriod {
+  background-color: rgba(237, 194, 43, 0.55);
+  width: 48%; }
+
+.thirdPeriod {
+  background-color: rgba(248, 120, 3, 0.55);
+  width: 64%; }
+
+.fourthPeriod {
+  background-color: rgba(243, 0, 0, 0.55);
+  width: 96%; }
+
+::-webkit-scrollbar {
+  display: none; }
+
+button {
+  cursor: pointer;
+  border: none; }
+
 .container {
-  background: #494949;
-}
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #494949 url("/media/background_gray.png") center center repeat; }
+  .container header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    z-index: 5; }
+    .container header .bigWave {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+    .container header .logo {
+      position: absolute;
+      top: 7%;
+      left: 6%;
+      width: auto;
+      height: 70px; }
+    .container header .currentDate {
+      position: absolute;
+      top: 14%;
+      right: 2%;
+      font-family: 'Palanquin Dark', sans-serif;
+      font-size: 1.2rem;
+      color: #fff; }
+  .container .main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 2; }
+    .container .main h1 {
+      font-size: 7rem;
+      color: rgba(73, 73, 73, 0.1);
+      position: absolute;
+      top: 15%;
+      left: 7%; }
+    .container .main .tasks {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 240px 45% 6% 15%;
+      list-style-type: none;
+      overflow-y: scroll; }
+      .container .main .tasks .task {
+        position: relative;
+        width: 100%;
+        min-height: 75px;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+        z-index: 2; }
+        .container .main .tasks .task .progressBar {
+          position: absolute;
+          height: 100%;
+          min-height: 75px;
+          border-radius: 15px; }
+        .container .main .tasks .task .taskPercentage, .container .main .tasks .task .taskDeadline, .container .main .tasks .task .taskName {
+          position: relative;
+          display: inline-block;
+          z-index: 4;
+          max-width: calc(100% - 120px); }
+        .container .main .tasks .task .taskPercentage {
+          font-size: 1.1rem;
+          color: rgba(55, 55, 55, 0.6);
+          margin: 10px 30px; }
+        .container .main .tasks .task .taskDeadline {
+          color: rgba(73, 73, 73, 0.8);
+          font-size: .9rem; }
+        .container .main .tasks .task .taskName {
+          font-weight: 500;
+          display: block;
+          margin: 0 30px;
+          line-height: 1.5rem;
+          font-size: .9rem; }
+        .container .main .tasks .task .taskFinished {
+          position: absolute;
+          top: 50%;
+          right: 25px;
+          transform: translateY(-50%);
+          width: 40px;
+          height: 40px;
+          z-index: 4;
+          border-radius: 50%;
+          background-color: #fff;
+          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+          transition: transform 200ms ease-in-out; }
+          .container .main .tasks .task .taskFinished:hover {
+            transform: translateY(-50%) scale(1.15); }
+          .container .main .tasks .task .taskFinished img {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            opacity: .6; }
+  .container .addHandle {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    z-index: 5;
+    transition: all 200ms ease-in-out; }
+    .container .addHandle:hover {
+      animation: bounceScale 900ms ease infinite;
+      box-shadow: none; }
+    .container .addHandle img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 22px;
+      height: 22px; }
+
+@keyframes bounceScale {
+  0% {
+    transform: scale(1); }
+  33% {
+    transform: scale(0.9); }
+  66% {
+    transform: scale(1.05); }
+  100% {
+    transform: scale(1); } }
+
 /*# sourceMappingURL=index.css.map */

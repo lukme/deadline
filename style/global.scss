@@ -1,5 +1,52 @@
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+};
+
+@mixin positionDefault {
+    position: absolute;
+    top: 0;
+    left: 0;
+};
+
+$darkGray: #373737; // rgba(55, 55, 55, 1)
+$gray: #494949; // rgba(73, 73, 73, 1)
+$green: rgba(64, 221, 127, .55); // #40DD7F
+$yellow: rgba(237, 194, 43, .55); //EDC22B
+$orange: rgba(248, 120, 3, .55); // #E88224
+$red: rgba(243, 0, 0, .55); // #F30000
+
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    color: $darkGray;
+    box-sizing: border-box;
+};
+
+.firstPeriod {
+    background-color: $green;
+    width: 32%; // TEMP
+}
+.secondPeriod {
+    background-color: $yellow;
+    width: 48%; // TEMP
+}
+.thirdPeriod {
+    background-color: $orange;
+    width: 64%; // TEMP
+}
+.fourthPeriod {
+    background-color: $red;
+    width: 96%; // TEMP
 }
 
+::-webkit-scrollbar {
+    display: none;
+  }
+
+button {
+    cursor: pointer;
+    border: none;
+}
