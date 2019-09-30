@@ -4,48 +4,70 @@
   font-family: 'Raleway', sans-serif;
   font-size: 20px;
   color: #373737;
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
 .firstPeriod {
   background-color: rgba(64, 221, 127, 0.55);
-  width: 32%; }
+  width: 32%;
+}
 
 .secondPeriod {
   background-color: rgba(237, 194, 43, 0.55);
-  width: 48%; }
+  width: 48%;
+}
 
 .thirdPeriod {
   background-color: rgba(248, 120, 3, 0.55);
-  width: 64%; }
+  width: 64%;
+}
 
 .fourthPeriod {
   background-color: rgba(243, 0, 0, 0.55);
-  width: 96%; }
+  width: 96%;
+}
 
 ::-webkit-scrollbar {
-  display: none; }
+  display: none;
+}
 
 button {
   cursor: pointer;
-  border: none; }
+  border: none;
+}
 
 .addOpened {
   border-radius: 20px;
   border-bottom-right-radius: 40px;
-  animation: addOpen 600ms forwards; }
-  .addOpened:hover {
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25); }
-  .addOpened img {
-    transform: rotate(45deg); }
+  -webkit-animation: addOpen 600ms forwards;
+          animation: addOpen 600ms forwards;
+}
+
+.addOpened:hover {
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+}
+
+.addOpened img {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
 
 .addClosed {
-  animation: addClose 600ms forwards; }
+  -webkit-animation: addClose 600ms forwards;
+          animation: addClose 600ms forwards;
+}
 
 .shown {
-  animation: makeVisible 1000ms ease-in-out forwards; }
+  -webkit-animation: makeVisible 1000ms ease-in-out forwards;
+          animation: makeVisible 1000ms ease-in-out forwards;
+}
 
 .hidden {
-  animation: makeHidden 500ms ease-in-out forwards; }
+  -webkit-animation: makeHidden 500ms ease-in-out forwards;
+          animation: makeHidden 500ms ease-in-out forwards;
+}
 
 * {
   margin: 0;
@@ -53,281 +75,476 @@ button {
   font-family: 'Raleway', sans-serif;
   font-size: 20px;
   color: #373737;
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
 .firstPeriod {
   background-color: rgba(64, 221, 127, 0.55);
-  width: 32%; }
+  width: 32%;
+}
 
 .secondPeriod {
   background-color: rgba(237, 194, 43, 0.55);
-  width: 48%; }
+  width: 48%;
+}
 
 .thirdPeriod {
   background-color: rgba(248, 120, 3, 0.55);
-  width: 64%; }
+  width: 64%;
+}
 
 .fourthPeriod {
   background-color: rgba(243, 0, 0, 0.55);
-  width: 96%; }
+  width: 96%;
+}
 
 ::-webkit-scrollbar {
-  display: none; }
+  display: none;
+}
 
 button {
   cursor: pointer;
-  border: none; }
+  border: none;
+}
 
 .addOpened {
   border-radius: 20px;
   border-bottom-right-radius: 40px;
-  animation: addOpen 600ms forwards; }
-  .addOpened:hover {
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25); }
-  .addOpened img {
-    transform: rotate(45deg); }
+  -webkit-animation: addOpen 600ms forwards;
+          animation: addOpen 600ms forwards;
+}
+
+.addOpened:hover {
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+}
+
+.addOpened img {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
 
 .addClosed {
-  animation: addClose 600ms forwards; }
+  -webkit-animation: addClose 600ms forwards;
+          animation: addClose 600ms forwards;
+}
 
 .shown {
-  animation: makeVisible 1000ms ease-in-out forwards; }
+  -webkit-animation: makeVisible 1000ms ease-in-out forwards;
+          animation: makeVisible 1000ms ease-in-out forwards;
+}
 
 .hidden {
-  animation: makeHidden 500ms ease-in-out forwards; }
+  -webkit-animation: makeHidden 500ms ease-in-out forwards;
+          animation: makeHidden 500ms ease-in-out forwards;
+}
+
+@-webkit-keyframes addOpen {
+  0% {
+    width: 80px;
+    height: 80px;
+  }
+  50% {
+    width: 25%;
+    height: 80px;
+  }
+  90% {
+    height: 60%;
+  }
+  100% {
+    width: 25%;
+    height: 60%;
+  }
+}
 
 @keyframes addOpen {
   0% {
     width: 80px;
-    height: 80px; }
+    height: 80px;
+  }
   50% {
     width: 25%;
-    height: 80px; }
+    height: 80px;
+  }
   90% {
-    height: 60%; }
+    height: 60%;
+  }
   100% {
     width: 25%;
-    height: 60%; } }
+    height: 60%;
+  }
+}
+
+@-webkit-keyframes addClose {
+  0% {
+    width: 25%;
+    height: 60%;
+  }
+  50% {
+    height: 80px;
+    width: 25%;
+  }
+  90% {
+    width: 80px;
+  }
+  100% {
+    width: 80px;
+    height: 80px;
+  }
+}
+
 @keyframes addClose {
   0% {
     width: 25%;
-    height: 60%; }
+    height: 60%;
+  }
   50% {
     height: 80px;
-    width: 25%; }
+    width: 25%;
+  }
   90% {
-    width: 80px; }
+    width: 80px;
+  }
   100% {
     width: 80px;
-    height: 80px; } }
+    height: 80px;
+  }
+}
+
+@-webkit-keyframes makeVisible {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes makeVisible {
   0% {
-    opacity: 0; }
+    opacity: 0;
+  }
   100% {
-    opacity: 1; } }
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes makeHidden {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @keyframes makeHidden {
   0% {
-    opacity: 1; }
+    opacity: 1;
+  }
   50% {
-    opacity: 0; }
+    opacity: 0;
+  }
   100% {
-    opacity: 0; } }
+    opacity: 0;
+  }
+}
+
 .container {
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #494949 url("/media/background.png") center center repeat; }
-  .container header {
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 140px;
-    z-index: 5; }
-    .container header .bigWave {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: block; }
-    .container header .smallWave {
-      display: none; }
-    .container header .logo, .container header .logoMobile {
-      position: absolute;
-      top: 7%;
-      left: 6%;
-      width: auto;
-      height: 70px; }
-    .container header .logo {
-      display: block; }
-    .container header .logoMobile {
-      display: none; }
-    .container header .currentDate {
-      position: absolute;
-      top: 14%;
-      right: 2%;
-      font-family: 'Palanquin Dark', sans-serif;
-      font-size: 1.2rem;
-      color: #fff; }
-  .container .main {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 2; }
-    .container .main h1 {
-      font-size: 7rem;
-      color: rgba(73, 73, 73, 0.1);
-      position: absolute;
-      top: 15%;
-      left: 7%; }
-    .container .main .tasks {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      padding: 240px 45% 6% 15%;
-      list-style-type: none;
-      overflow-y: scroll; }
-      .container .main .tasks .task {
-        position: relative;
-        width: 100%;
-        min-height: 75px;
-        margin-bottom: 20px;
-        padding-bottom: 15px;
-        background-color: white;
-        border-radius: 15px;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
-        z-index: 2; }
-        .container .main .tasks .task .progressBar {
-          position: absolute;
-          height: 100%;
-          min-height: 75px;
-          border-radius: 15px; }
-        .container .main .tasks .task .taskPercentage, .container .main .tasks .task .taskDeadline, .container .main .tasks .task .taskName {
-          position: relative;
-          display: inline-block;
-          z-index: 4;
-          max-width: calc(100% - 120px); }
-        .container .main .tasks .task .taskPercentage {
-          font-size: 1.1rem;
-          color: rgba(55, 55, 55, 0.6);
-          margin: 10px 30px; }
-        .container .main .tasks .task .taskDeadline {
-          color: rgba(73, 73, 73, 0.8);
-          font-size: .9rem; }
-        .container .main .tasks .task .taskName {
-          font-weight: 500;
-          display: block;
-          margin: 0 30px;
-          line-height: 1.5rem;
-          font-size: .9rem; }
-        .container .main .tasks .task .taskFinished {
-          position: absolute;
-          top: 50%;
-          right: 25px;
-          transform: translateY(-50%);
-          width: 40px;
-          height: 40px;
-          z-index: 4;
-          border-radius: 50%;
-          background-color: #fff;
+  background: #494949 url("/media/background.png") center center repeat;
+}
+
+.container header {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  z-index: 5;
+}
+
+.container header .bigWave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.container header .smallWave {
+  display: none;
+}
+
+.container header .logo, .container header .logoMobile {
+  position: absolute;
+  top: 7%;
+  left: 6%;
+  width: auto;
+  height: 70px;
+}
+
+.container header .logo {
+  display: block;
+}
+
+.container header .logoMobile {
+  display: none;
+}
+
+.container header .currentDate {
+  position: absolute;
+  top: 14%;
+  right: 2%;
+  font-family: 'Palanquin Dark', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.container .main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.container .main h1 {
+  font-size: 7rem;
+  color: rgba(73, 73, 73, 0.1);
+  position: absolute;
+  top: 15%;
+  left: 7%;
+}
+
+.container .main .tasks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 240px 45% 6% 15%;
+  list-style-type: none;
+  overflow-y: scroll;
+}
+
+.container .main .tasks .task {
+  position: relative;
+  width: 100%;
+  min-height: 75px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  background-color: white;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
-          transition: transform 200ms ease-in-out; }
-          .container .main .tasks .task .taskFinished:hover {
-            transform: translateY(-50%) scale(1.15); }
-          .container .main .tasks .task .taskFinished img {
-            width: 20px;
-            height: 20px;
-            position: absolute;
-            top: 25%;
-            left: 25%;
-            opacity: .6; }
-  .container .addPanel {
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    width: 80px;
-    height: 80px;
-    background-color: #fff;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
-    border-radius: 40px;
-    z-index: 4;
-    outline: none;
-    transition: all 200ms ease-in-out;
-    overflow: hidden; }
-    .container .addPanel:hover {
-      box-shadow: none; }
-    .container .addPanel img {
-      position: absolute;
-      bottom: 29px;
-      right: 29px;
-      width: 22px;
-      height: 22px;
-      transition: transform 300ms ease; }
-    .container .addPanel .addHandle {
-      position: absolute;
-      bottom: 0px;
-      right: 0px;
-      width: 80px;
-      height: 80px; }
-    .container .addPanel .addContent {
-      position: absolute;
-      top: 70px;
-      left: 15%;
-      width: 70%;
-      opacity: 0; }
-      .container .addPanel .addContent h3 {
-        color: rgba(73, 73, 73, 0.5);
-        font-size: .8rem;
-        margin-bottom: 20px; }
-      .container .addPanel .addContent input, .container .addPanel .addContent textarea {
-        width: 100%;
-        height: 40px;
-        margin-top: 20px;
-        border: none;
-        border-radius: 15px;
-        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25); }
-        .container .addPanel .addContent input::placeholder, .container .addPanel .addContent textarea::placeholder {
-          opacity: 0.6;
-          padding-left: 5%;
-          line-height: 40px; }
-      .container .addPanel .addContent textarea {
-        width: 100%;
-        height: 120px;
-        resize: none; }
-      .container .addPanel .addContent button {
-        position: relative;
-        display: block;
-        margin: 20px auto;
-        width: 60px;
-        height: 60px;
-        background-color: #fff;
-        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
-        border-radius: 50%; }
-        .container .addPanel .addContent button img {
-          position: absolute;
-          top: 34%;
-          left: 34%;
+  z-index: 2;
+}
+
+.container .main .tasks .task .progressBar {
+  position: absolute;
+  height: 100%;
+  min-height: 75px;
+  border-radius: 15px;
+}
+
+.container .main .tasks .task .taskPercentage, .container .main .tasks .task .taskDeadline, .container .main .tasks .task .taskName {
+  position: relative;
+  display: inline-block;
+  z-index: 4;
+  max-width: calc(100% - 120px);
+}
+
+.container .main .tasks .task .taskPercentage {
+  font-size: 1.1rem;
+  color: rgba(55, 55, 55, 0.6);
+  margin: 10px 30px;
+}
+
+.container .main .tasks .task .taskDeadline {
+  color: rgba(73, 73, 73, 0.8);
+  font-size: .9rem;
+}
+
+.container .main .tasks .task .taskName {
+  font-weight: 500;
+  display: block;
+  margin: 0 30px;
+  line-height: 1.5rem;
+  font-size: .9rem;
+}
+
+.container .main .tasks .task .taskFinished {
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  z-index: 4;
+  border-radius: 50%;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+  -webkit-transition: -webkit-transform 200ms ease-in-out;
+  transition: -webkit-transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+}
+
+.container .main .tasks .task .taskFinished:hover {
+  -webkit-transform: translateY(-50%) scale(1.15);
+          transform: translateY(-50%) scale(1.15);
+}
+
+.container .main .tasks .task .taskFinished img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  opacity: .6;
+}
+
+.container .addPanel {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 40px;
+  z-index: 4;
+  outline: none;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  overflow: hidden;
+}
+
+.container .addPanel:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.container .addPanel img {
+  position: absolute;
+  bottom: 29px;
+  right: 29px;
+  width: 22px;
+  height: 22px;
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+}
+
+.container .addPanel .addHandle {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 80px;
+  height: 80px;
+}
+
+.container .addPanel .addContent {
+  position: absolute;
+  top: 70px;
+  left: 15%;
+  width: 70%;
+  opacity: 0;
+}
+
+.container .addPanel .addContent h3 {
+  color: rgba(73, 73, 73, 0.5);
+  font-size: .8rem;
+  margin-bottom: 20px;
+}
+
+.container .addPanel .addContent input, .container .addPanel .addContent textarea {
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  padding-left: 5%;
+  border: none;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+  font-size: 0.8rem;
+}
+
+.container .addPanel .addContent input::-webkit-input-placeholder, .container .addPanel .addContent textarea::-webkit-input-placeholder {
+  opacity: 0.6;
+}
+
+.container .addPanel .addContent input:-ms-input-placeholder, .container .addPanel .addContent textarea:-ms-input-placeholder {
+  opacity: 0.6;
+}
+
+.container .addPanel .addContent input::-ms-input-placeholder, .container .addPanel .addContent textarea::-ms-input-placeholder {
+  opacity: 0.6;
+}
+
+.container .addPanel .addContent input::placeholder, .container .addPanel .addContent textarea::placeholder {
+  opacity: 0.6;
+}
+
+.container .addPanel .addContent textarea {
+  width: 100%;
+  height: 120px;
+  resize: none;
+  padding-top: 3%;
+}
+
+.container .addPanel .addContent button {
+  position: relative;
+  display: block;
+  margin: 20px auto;
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+}
+
+.container .addPanel .addContent button img {
+  position: absolute;
+  top: 34%;
+  left: 34%;
+  -webkit-transform: rotate(0);
           transform: rotate(0);
-          width: 20px;
-          height: auto; }
+  width: 20px;
+  height: auto;
+}
 
 @media screen and (max-width: 1500px) {
   .container .main .tasks {
-    padding: 240px 25% 6% 10%; } }
+    padding: 240px 25% 6% 10%;
+  }
+}
+
 @media screen and (max-width: 1030px) {
   .container .main h1 {
-    display: none; }
+    display: none;
+  }
   .container .main .tasks {
-    padding: 240px 10% 6% 10%; }
+    padding: 240px 10% 6% 10%;
+  }
   .container .addPanel {
     right: 50%;
     bottom: 15px;
@@ -335,80 +552,112 @@ button {
     height: 70px;
     margin-right: -35px;
     opacity: .8;
-    transition: all 400ms ease-in-out; }
-    .container .addPanel img {
-      bottom: 24px;
-      right: 24px; }
+    -webkit-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
+  }
+  .container .addPanel img {
+    bottom: 24px;
+    right: 24px;
+  }
   .container .addOpened {
     right: 30%;
-    animation: none;
+    -webkit-animation: none;
+            animation: none;
     width: calc(40% + 70px);
     height: 70%;
-    opacity: .93; }
+    opacity: .93;
+  }
   .container .addClosed {
-    animation: none;
+    -webkit-animation: none;
+            animation: none;
     width: 70px;
-    height: 70px; } }
+    height: 70px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .container header .bigWave {
-    display: none; }
+    display: none;
+  }
   .container header .smallWave {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: initial;
-    display: block; }
+    display: block;
+  }
   .container header .logo {
     top: 0;
-    height: 50px; }
+    height: 50px;
+  }
   .container header .currentDate {
     right: unset;
     left: 8%;
     top: 32%;
     font-size: .8rem;
-    color: rgba(255, 255, 255, 0.6); }
+    color: rgba(255, 255, 255, 0.6);
+  }
   .container .main .tasks {
-    padding: 150px 0 6% 0; }
-    .container .main .tasks .task {
-      border-radius: 0; }
-      .container .main .tasks .task .progressBar {
-        border-radius: 0; }
-      .container .main .tasks .task .taskName {
-        font-size: 0.7rem;
-        line-height: 1.3rem;
-        max-width: calc(100% - 90px); }
-      .container .main .tasks .task .taskFinished {
-        right: 18px; }
+    padding: 150px 0 6% 0;
+  }
+  .container .main .tasks .task {
+    border-radius: 0;
+  }
+  .container .main .tasks .task .progressBar {
+    border-radius: 0;
+  }
+  .container .main .tasks .task .taskName {
+    font-size: 0.7rem;
+    line-height: 1.3rem;
+    max-width: calc(100% - 90px);
+  }
+  .container .main .tasks .task .taskFinished {
+    right: 18px;
+  }
+  .container .addPanel .addContent {
+    top: 180px;
+  }
   .container .addOpened {
     right: 0;
     bottom: 0;
     border-radius: 0;
-    animation: none;
+    -webkit-animation: none;
+            animation: none;
     width: 100%;
     height: 100%;
     opacity: .93;
-    margin-right: 0; }
+    margin-right: 0;
+  }
   .container .addClosed {
-    animation: none;
+    -webkit-animation: none;
+            animation: none;
     width: 70px;
-    height: 70px; } }
+    height: 70px;
+  }
+}
+
 @media only screen and (max-width: 767px) and (orientation: landscape) {
   .container header .smallWave {
-    display: none; }
+    display: none;
+  }
   .container header .logo {
-    display: none; }
+    display: none;
+  }
   .container header .logoMobile {
     top: 0;
     left: 3%;
     height: 50px;
-    display: block; }
+    display: block;
+  }
   .container header .currentDate {
     top: 14%;
     left: unset;
     right: 2%;
-    color: #373737; }
+    color: #373737;
+  }
   .container .main .tasks {
-    padding: 100px 0 6% 0; } }
-
+    padding: 100px 0 6% 0;
+  }
+}
 /*# sourceMappingURL=index.css.map */

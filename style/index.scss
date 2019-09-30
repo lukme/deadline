@@ -173,18 +173,20 @@
             input, textarea {
                 @include size(100%, 40px);
                 margin-top: 20px;
+                padding-left: 5%;
                 border: none;
                 border-radius: 15px;
                 box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+                font-size: 0.8rem;
                 &::placeholder {
                     opacity: 0.6;
-                    padding-left: 5%;
-                    line-height: 40px;
+                    // line-height: 40px;
                 }
             }
             textarea {
                 @include size(100%, 120px);
                 resize: none;
+                padding-top: 3%;
             }
             button {
                 position: relative;
@@ -293,6 +295,9 @@
                     right: 18px;
                 }
             }
+        }
+        .addPanel .addContent {
+            top: 180px;
         }
         .addOpened {
             right: 0;
