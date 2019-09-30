@@ -1,11 +1,16 @@
 let btn = document.querySelector('.addHandle'),
+    addPanel = document.querySelector('.addPanel'),
+    addContent = document.querySelector('.addContent'),
     count = false;
 btn.addEventListener('click', function() {
     if (!count) {
         count = !count;
-        this.className = "addHandle addOpened";
+        addPanel.className = "addPanel addOpened";
+        addContent.className = "addContent shown";
+
     } else {
         count = !count;
-        this.className = "addHandle addClosed";
+        addPanel.className = "addPanel addClosed";
+        addContent.className = "addContent hidden";
     }
 })

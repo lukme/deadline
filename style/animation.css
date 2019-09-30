@@ -47,4 +47,41 @@ button {
 .hidden {
   animation: makeHidden 500ms ease-in-out forwards; }
 
-/*# sourceMappingURL=global.css.map */
+@keyframes addOpen {
+  0% {
+    width: 80px;
+    height: 80px; }
+  50% {
+    width: 25%;
+    height: 80px; }
+  90% {
+    height: 60%; }
+  100% {
+    width: 25%;
+    height: 60%; } }
+@keyframes addClose {
+  0% {
+    width: 25%;
+    height: 60%; }
+  50% {
+    height: 80px;
+    width: 25%; }
+  90% {
+    width: 80px; }
+  100% {
+    width: 80px;
+    height: 80px; } }
+@keyframes makeVisible {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes makeHidden {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+/*# sourceMappingURL=animation.css.map */

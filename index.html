@@ -36,7 +36,7 @@
                     <p class="taskDeadline">12.10.2019</p>
                     <p class="taskName">Send landing page templates Send landing page templates Send landing page templates Send landing page templates Send landing page templates Send landing page templates Send landing page templates</p>
                     <button class="taskFinished">
-                        <img src="/media/tic.svg" alt="taskFinished">
+                        <img src="/media/tic_archive.svg" alt="taskFinished">
                     </button>
                 </li>
                 <li class="task">
@@ -45,7 +45,7 @@
                     <p class="taskDeadline">18.10.2019</p>
                     <p class="taskName">Finish DL project in JavaScript</p>
                     <button class="taskFinished">
-                        <img src="/media/tic.svg" alt="taskFinished">
+                        <img src="/media/tic_archive.svg" alt="taskFinished">
                     </button>
                 </li>
                 <li class="task">
@@ -54,7 +54,7 @@
                     <p class="taskDeadline">26.10.2019</p>
                     <p class="taskName">Make the online presentation including all the templates</p>
                     <button class="taskFinished">
-                        <img src="/media/tic.svg" alt="taskFinished">
+                        <img src="/media/tic_archive.svg" alt="taskFinished">
                     </butt>
                 </li>
                 <li class="task">
@@ -63,7 +63,7 @@
                     <p class="taskDeadline">30.10.2019</p>
                     <p class="taskName">Take down the LSATs</p>
                     <button class="taskFinished">
-                        <img src="/media/tic.svg" alt="taskFinished">
+                        <img src="/media/tic_archive.svg" alt="taskFinished">
                     </button>
                 </li>
                 <li class="task">
@@ -72,7 +72,7 @@
                     <p class="taskDeadline">18.10.2019</p>
                     <p class="taskName">Finish DL project in JavaScript</p>
                     <button class="taskFinished">
-                        <img src="/media/tic.svg" alt="taskFinished">
+                        <img src="/media/tic_archive.svg" alt="taskFinished">
                     </button>
                 </li>
                 <li class="task">
@@ -81,7 +81,7 @@
                     <p class="taskDeadline">12.10.2019</p>
                     <p class="taskName">Send landing page templates</p>
                     <button class="taskFinished">
-                        <img src="/media/tic.svg" alt="taskFinished">
+                        <img src="/media/tic_archive.svg" alt="taskFinished">
                     </button>
                 </li>
                 <li class="task">
@@ -90,7 +90,7 @@
                     <p class="taskDeadline">30.10.2019</p>
                     <p class="taskName">Take down the LSATs</p>
                     <button class="taskFinished">
-                        <img src="/media/tic.svg" alt="taskFinished">
+                        <img src="/media/tic_archive.svg" alt="taskFinished">
                     </button>
                 </li>
                 <li class="task">
@@ -99,7 +99,7 @@
                     <p class="taskDeadline">12.10.2019</p>
                     <p class="taskName">Send landing page templates</p>
                     <button class="taskFinished">
-                        <img src="/media/tic.svg" alt="taskFinished">
+                        <img src="/media/tic_archive.svg" alt="taskFinished">
                     </button>
                 </li>
                 <li class="task">
@@ -108,16 +108,26 @@
                     <p class="taskDeadline">26.10.2019</p>
                     <p class="taskName">Make the online presentation including all the templates</p>
                     <button class="taskFinished">
-                        <img src="/media/tic.svg" alt="taskFinished">
+                        <img src="/media/tic_archive.svg" alt="taskFinished">
                     </button>
                 </li>
             </ul>
         </section>
 
-        <section class="addTask">
-            <button class="addHandle">
+        <section class="addPanel">
+            <div class="addHandle">
                 <img src="/media/add.svg" alt="addTask">
-            </button>
+            </div>
+            <div class="addContent">
+                <h3>Add task</h3>
+                <input type="text" placeholder="Task name">
+                <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Start date">
+                <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Deadline">
+                <textarea placeholder="Task description"></textarea>
+                <button class="addSubmit">
+                    <img src="/media/tic.svg" alt="addTask">
+                </button>
+            </div>
         </section>
 
     </div>

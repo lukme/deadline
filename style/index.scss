@@ -1,4 +1,5 @@
 @import 'global';
+@import 'animation';
 
 .container {
     position: absolute;
@@ -130,7 +131,7 @@
             }
         }
     }
-    .addHandle {
+    .addPanel {
         position: absolute;
         bottom: 30px;
         right: 30px;
@@ -141,9 +142,10 @@
         z-index: 4;
         outline: none;
         transition: all 200ms ease-in-out;
-            &:hover {
-                box-shadow: none;
-            }
+        overflow: hidden;
+        &:hover {
+            box-shadow: none;
+        }
         img {
             position: absolute;
             bottom: 29px;
@@ -151,56 +153,56 @@
             @include size(22px, 22px);
             transition: transform 300ms ease;
         }
-    }
-    .addOpened {
-        border-radius: 20px;
-        border-bottom-right-radius: 40px;
-        &:hover {
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+        .addHandle {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            @include size(80px, 80px);
         }
-        animation: addOpen 600ms forwards;
-        img {
-            transform: rotate(45deg);
+        .addContent {
+            position: absolute;
+            top: 70px;
+            left: 15%;
+            width: 70%;
+            opacity: 0;
+            h3 {
+                color: rgba($gray, .5);
+                font-size: .8rem;
+                margin-bottom: 20px;
+            }
+            input, textarea {
+                @include size(100%, 40px);
+                margin-top: 20px;
+                border: none;
+                border-radius: 15px;
+                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+                &::placeholder {
+                    opacity: 0.6;
+                    padding-left: 5%;
+                    line-height: 40px;
+                }
+            }
+            textarea {
+                @include size(100%, 120px);
+                resize: none;
+            }
+            button {
+                position: relative;
+                display: block;
+                margin: 20px auto;
+                @include size(60px, 60px);
+                background-color: #fff;
+                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+                border-radius: 50%;
+                img {
+                    position: absolute;
+                    top: 34%;
+                    left: 34%;
+                    transform: rotate(0);
+                    @include size(20px, auto);
+                }
+            }
         }
-    }
-    .addClosed {
-        animation: addClose 600ms forwards;
-    }
-}
-
-@keyframes addOpen {
-    0% {
-        width: 80px;
-        height: 80px;
-    }
-    50% {
-        width: 25%;
-        height: 80px;
-    }
-    90% {
-        height: 60%;
-    }
-    100% {
-        width: 25%;
-        height: 60%;
-    }
-}
-
-@keyframes addClose {
-    0% {
-        width: 25%;
-        height: 60%;
-    }
-    50% {
-        height: 80px;
-        width: 25%;
-    }
-    90% {
-        width: 80px;
-    }
-    100% {
-        width: 80px;
-        height: 80px;
     }
 }
 
@@ -222,33 +224,32 @@
                 padding: 240px 10% 6% 10%;
             }
         } 
-        .addTask {
-            .addHandle {
-                right: 50%;
-                bottom: 15px;
-                width: 70px;
-                height: 70px;
-                margin-right: -35px;
-                opacity: .8;
-                transition: all 400ms ease-in-out;
-                img {
-                    bottom: 24px;
-                    right: 24px;
-                }
-            }
-            .addOpened {
-                right: 30%;
-                animation: none;
-                width: calc(40% + 70px);
-                height: 70%;
-                opacity: .93;
-            }
-            .addClosed {
-                animation: none;
-                width: 70px;
-                height: 70px;
+        .addPanel {
+            right: 50%;
+            bottom: 15px;
+            width: 70px;
+            height: 70px;
+            margin-right: -35px;
+            opacity: .8;
+            transition: all 400ms ease-in-out;
+            img {
+                bottom: 24px;
+                right: 24px;
             }
         }
+        .addOpened {
+            right: 30%;
+            animation: none;
+            width: calc(40% + 70px);
+            height: 70%;
+            opacity: .93;
+        }
+        .addClosed {
+            animation: none;
+            width: 70px;
+            height: 70px;
+        }
+        
     }
 }
 
@@ -293,22 +294,20 @@
                 }
             }
         }
-        .addTask {
-            .addOpened {
-                right: 0;
-                bottom: 0;
-                border-radius: 0;
-                animation: none;
-                width: 100%;
-                height: 100%;
-                opacity: .93;
-                margin-right: 0;
-            }
-            .addClosed {
-                animation: none;
-                width: 70px;
-                height: 70px;
-            }
+        .addOpened {
+            right: 0;
+            bottom: 0;
+            border-radius: 0;
+            animation: none;
+            width: 100%;
+            height: 100%;
+            opacity: .93;
+            margin-right: 0;
+        }
+        .addClosed {
+            animation: none;
+            width: 70px;
+            height: 70px;
         }
     }
 }

@@ -29,6 +29,109 @@ button {
   cursor: pointer;
   border: none; }
 
+.addOpened {
+  border-radius: 20px;
+  border-bottom-right-radius: 40px;
+  animation: addOpen 600ms forwards; }
+  .addOpened:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25); }
+  .addOpened img {
+    transform: rotate(45deg); }
+
+.addClosed {
+  animation: addClose 600ms forwards; }
+
+.shown {
+  animation: makeVisible 1000ms ease-in-out forwards; }
+
+.hidden {
+  animation: makeHidden 500ms ease-in-out forwards; }
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  color: #373737;
+  box-sizing: border-box; }
+
+.firstPeriod {
+  background-color: rgba(64, 221, 127, 0.55);
+  width: 32%; }
+
+.secondPeriod {
+  background-color: rgba(237, 194, 43, 0.55);
+  width: 48%; }
+
+.thirdPeriod {
+  background-color: rgba(248, 120, 3, 0.55);
+  width: 64%; }
+
+.fourthPeriod {
+  background-color: rgba(243, 0, 0, 0.55);
+  width: 96%; }
+
+::-webkit-scrollbar {
+  display: none; }
+
+button {
+  cursor: pointer;
+  border: none; }
+
+.addOpened {
+  border-radius: 20px;
+  border-bottom-right-radius: 40px;
+  animation: addOpen 600ms forwards; }
+  .addOpened:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25); }
+  .addOpened img {
+    transform: rotate(45deg); }
+
+.addClosed {
+  animation: addClose 600ms forwards; }
+
+.shown {
+  animation: makeVisible 1000ms ease-in-out forwards; }
+
+.hidden {
+  animation: makeHidden 500ms ease-in-out forwards; }
+
+@keyframes addOpen {
+  0% {
+    width: 80px;
+    height: 80px; }
+  50% {
+    width: 25%;
+    height: 80px; }
+  90% {
+    height: 60%; }
+  100% {
+    width: 25%;
+    height: 60%; } }
+@keyframes addClose {
+  0% {
+    width: 25%;
+    height: 60%; }
+  50% {
+    height: 80px;
+    width: 25%; }
+  90% {
+    width: 80px; }
+  100% {
+    width: 80px;
+    height: 80px; } }
+@keyframes makeVisible {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes makeHidden {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
 .container {
   position: absolute;
   top: 0;
@@ -147,7 +250,7 @@ button {
             top: 25%;
             left: 25%;
             opacity: .6; }
-  .container .addHandle {
+  .container .addPanel {
     position: absolute;
     bottom: 30px;
     right: 30px;
@@ -158,51 +261,65 @@ button {
     border-radius: 40px;
     z-index: 4;
     outline: none;
-    transition: all 200ms ease-in-out; }
-    .container .addHandle:hover {
+    transition: all 200ms ease-in-out;
+    overflow: hidden; }
+    .container .addPanel:hover {
       box-shadow: none; }
-    .container .addHandle img {
+    .container .addPanel img {
       position: absolute;
       bottom: 29px;
       right: 29px;
       width: 22px;
       height: 22px;
       transition: transform 300ms ease; }
-  .container .addOpened {
-    border-radius: 20px;
-    border-bottom-right-radius: 40px;
-    animation: addOpen 600ms forwards; }
-    .container .addOpened:hover {
-      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25); }
-    .container .addOpened img {
-      transform: rotate(45deg); }
-  .container .addClosed {
-    animation: addClose 600ms forwards; }
+    .container .addPanel .addHandle {
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      width: 80px;
+      height: 80px; }
+    .container .addPanel .addContent {
+      position: absolute;
+      top: 70px;
+      left: 15%;
+      width: 70%;
+      opacity: 0; }
+      .container .addPanel .addContent h3 {
+        color: rgba(73, 73, 73, 0.5);
+        font-size: .8rem;
+        margin-bottom: 20px; }
+      .container .addPanel .addContent input, .container .addPanel .addContent textarea {
+        width: 100%;
+        height: 40px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25); }
+        .container .addPanel .addContent input::placeholder, .container .addPanel .addContent textarea::placeholder {
+          opacity: 0.6;
+          padding-left: 5%;
+          line-height: 40px; }
+      .container .addPanel .addContent textarea {
+        width: 100%;
+        height: 120px;
+        resize: none; }
+      .container .addPanel .addContent button {
+        position: relative;
+        display: block;
+        margin: 20px auto;
+        width: 60px;
+        height: 60px;
+        background-color: #fff;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+        border-radius: 50%; }
+        .container .addPanel .addContent button img {
+          position: absolute;
+          top: 34%;
+          left: 34%;
+          transform: rotate(0);
+          width: 20px;
+          height: auto; }
 
-@keyframes addOpen {
-  0% {
-    width: 80px;
-    height: 80px; }
-  50% {
-    width: 25%;
-    height: 80px; }
-  90% {
-    height: 60%; }
-  100% {
-    width: 25%;
-    height: 60%; } }
-@keyframes addClose {
-  0% {
-    width: 25%;
-    height: 60%; }
-  50% {
-    height: 80px;
-    width: 25%; }
-  90% {
-    width: 80px; }
-  100% {
-    width: 80px;
-    height: 80px; } }
 @media screen and (max-width: 1500px) {
   .container .main .tasks {
     padding: 240px 25% 6% 10%; } }
@@ -211,7 +328,7 @@ button {
     display: none; }
   .container .main .tasks {
     padding: 240px 10% 6% 10%; }
-  .container .addTask .addHandle {
+  .container .addPanel {
     right: 50%;
     bottom: 15px;
     width: 70px;
@@ -219,16 +336,16 @@ button {
     margin-right: -35px;
     opacity: .8;
     transition: all 400ms ease-in-out; }
-    .container .addTask .addHandle img {
+    .container .addPanel img {
       bottom: 24px;
       right: 24px; }
-  .container .addTask .addOpened {
+  .container .addOpened {
     right: 30%;
     animation: none;
     width: calc(40% + 70px);
     height: 70%;
     opacity: .93; }
-  .container .addTask .addClosed {
+  .container .addClosed {
     animation: none;
     width: 70px;
     height: 70px; } }
@@ -263,7 +380,7 @@ button {
         max-width: calc(100% - 90px); }
       .container .main .tasks .task .taskFinished {
         right: 18px; }
-  .container .addTask .addOpened {
+  .container .addOpened {
     right: 0;
     bottom: 0;
     border-radius: 0;
@@ -272,7 +389,7 @@ button {
     height: 100%;
     opacity: .93;
     margin-right: 0; }
-  .container .addTask .addClosed {
+  .container .addClosed {
     animation: none;
     width: 70px;
     height: 70px; } }
