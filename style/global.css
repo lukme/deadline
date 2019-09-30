@@ -4,29 +4,36 @@
   font-family: 'Raleway', sans-serif;
   font-size: 20px;
   color: #373737;
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
 .firstPeriod {
   background-color: rgba(64, 221, 127, 0.55);
-  width: 32%; }
+  width: 32%;
+}
 
 .secondPeriod {
   background-color: rgba(237, 194, 43, 0.55);
-  width: 48%; }
+  width: 48%;
+}
 
 .thirdPeriod {
   background-color: rgba(248, 120, 3, 0.55);
-  width: 64%; }
+  width: 64%;
+}
 
 .fourthPeriod {
   background-color: rgba(243, 0, 0, 0.55);
-  width: 96%; }
+  width: 96%;
+}
 
 ::-webkit-scrollbar {
-  display: none; }
+  display: none;
+}
 
 button {
   cursor: pointer;
-  border: none; }
-
+  border: none;
+}
 /*# sourceMappingURL=global.css.map */

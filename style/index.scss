@@ -5,8 +5,10 @@
     top: 0;
     left: 0;
     @include size(100vw, 100vh);
-    background: $gray url('/media/background_gray.png') center center repeat;
+    // background: $gray url('/media/background_gray.png') center center repeat;
+    background: $gray url('/media/background.png') center center repeat;
     header {
+        pointer-events: none;
         position: absolute;
         top: 0;
         left: 0;
@@ -15,12 +17,22 @@
         .bigWave {
             @include positionDefault;
             @include size(100%, 100%);
+            display: block;
         }
-        .logo {
+        .smallWave {
+            display: none;
+        }
+        .logo, .logoMobile {
             position: absolute;
             top: 7%;
             left: 6%;
             @include size(auto, 70px);
+        }
+        .logo {
+            display: block;
+        }
+        .logoMobile {
+            display: none;
         }
         .currentDate {
             position: absolute;
@@ -57,7 +69,7 @@
                 min-height: 75px;
                 margin-bottom: 20px;
                 padding-bottom: 15px;
-                background-color: #fff;
+                background-color: rgba(255, 255, 255, 1);
                 border-radius: 15px;
                 box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
                 z-index: 2;
@@ -125,34 +137,207 @@
         @include size(80px, 80px);
         background-color: #fff;
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
-        border-radius: 50%;
-        z-index: 5;
+        border-radius: 40px;
+        z-index: 4;
+        outline: none;
         transition: all 200ms ease-in-out;
             &:hover {
-                animation: bounceScale 900ms ease infinite;
                 box-shadow: none;
             }
         img {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            bottom: 29px;
+            right: 29px;
             @include size(22px, 22px);
+            transition: transform 300ms ease;
+        }
+    }
+    .addOpened {
+        border-radius: 20px;
+        border-bottom-right-radius: 40px;
+        &:hover {
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+        }
+        animation: addOpen 600ms forwards;
+        img {
+            transform: rotate(45deg);
+        }
+    }
+    .addClosed {
+        animation: addClose 600ms forwards;
+    }
+}
+
+@keyframes addOpen {
+    0% {
+        width: 80px;
+        height: 80px;
+    }
+    50% {
+        width: 25%;
+        height: 80px;
+    }
+    90% {
+        height: 60%;
+    }
+    100% {
+        width: 25%;
+        height: 60%;
+    }
+}
+
+@keyframes addClose {
+    0% {
+        width: 25%;
+        height: 60%;
+    }
+    50% {
+        height: 80px;
+        width: 25%;
+    }
+    90% {
+        width: 80px;
+    }
+    100% {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+// laptops
+@media screen and (max-width: 1500px) {
+    .container .main .tasks {
+        padding: 240px 25% 6% 10%;
+    }
+}
+
+// tablet
+@media screen and (max-width: 1030px) {
+    .container {
+        .main {
+            h1 {
+                display: none;
+            }
+            .tasks {
+                padding: 240px 10% 6% 10%;
+            }
+        } 
+        .addTask {
+            .addHandle {
+                right: 50%;
+                bottom: 15px;
+                width: 70px;
+                height: 70px;
+                margin-right: -35px;
+                opacity: .8;
+                transition: all 400ms ease-in-out;
+                img {
+                    bottom: 24px;
+                    right: 24px;
+                }
+            }
+            .addOpened {
+                right: 30%;
+                animation: none;
+                width: calc(40% + 70px);
+                height: 70%;
+                opacity: .93;
+            }
+            .addClosed {
+                animation: none;
+                width: 70px;
+                height: 70px;
+            }
         }
     }
 }
 
-@keyframes bounceScale {
-    0% {
-        transform: scale(1);
+// mobile
+@media screen and (max-width: 767px) {
+    .container {
+        header {
+            .bigWave {
+                display: none;
+            }
+            .smallWave {
+                @include positionDefault;
+                @include size(100%, initial);
+                display: block;
+            }
+            .logo {
+                top: 0;
+                height: 50px;
+            }
+            .currentDate {
+                right: unset;
+                left: 8%;
+                top: 32%;
+                font-size: .8rem;
+                color: rgba(255,255,255,.6);
+            }
+        }
+        .main .tasks {
+            padding: 150px 0 6% 0;
+                .task {
+                    border-radius: 0;
+                .progressBar {
+                    border-radius: 0;
+                }
+                .taskName {
+                    font-size: 0.7rem;
+                    line-height: 1.3rem;
+                    max-width: calc(100% - 90px);
+                }
+                .taskFinished {
+                    right: 18px;
+                }
+            }
+        }
+        .addTask {
+            .addOpened {
+                right: 0;
+                bottom: 0;
+                border-radius: 0;
+                animation: none;
+                width: 100%;
+                height: 100%;
+                opacity: .93;
+                margin-right: 0;
+            }
+            .addClosed {
+                animation: none;
+                width: 70px;
+                height: 70px;
+            }
+        }
     }
-    33% {
-        transform: scale(0.9);
-    }
-    66% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
+}
+
+// mobile horizontally
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+    .container {
+        header {
+            .smallWave {
+                display: none;
+            }
+            .logo {
+                display: none;
+            }
+            .logoMobile {
+                top: 0;
+                left: 3%;
+                height: 50px;
+                display: block;
+            }
+            .currentDate {
+                top: 14%;
+                left: unset;
+                right: 2%;
+                color: $darkGray;
+            }
+        }
+        .main .tasks {
+            padding: 100px 0 6% 0;
+        }
     }
 }
