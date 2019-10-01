@@ -56,3 +56,10 @@
         opacity: 0;
     }
 }
+
+@keyframes addTask {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+}

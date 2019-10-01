@@ -93,9 +93,18 @@ function countPercent() {
             realDifference = deadlineSeconds - today;
 
             percentDifference = (realDifference / buildInDifference) * 100;
+            percentValue = (100 - Math.floor(percentDifference));
 
-        console.log(buildInDifference);
-        console.log(realDifference);
-        el.children[1].innerText = Math.floor(percentDifference) + "%";
+        // console.log(buildInDifference);
+        // console.log(realDifference);
+        console.log(percentValue);
+
+        if (percentValue > 100 || percentValue <= 0) {
+            el.children[1].innerText = 100 + "%";
+        } else {
+            el.children[1].innerText = percentValue + "%";
+        }
     })
 }
+
+setInterval(countPercent, 10000);

@@ -182,4 +182,20 @@ button {
     opacity: 0;
   }
 }
+
+@-webkit-keyframes addTask {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes addTask {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+}
 /*# sourceMappingURL=animation.css.map */
