@@ -378,6 +378,10 @@ button {
   font-size: .9rem;
 }
 
+.container .main .tasks .task .taskStart {
+  display: none;
+}
+
 .container .main .tasks .task .taskName {
   font-weight: 500;
   display: block;

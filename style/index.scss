@@ -95,6 +95,9 @@
                     color: rgba($gray, .8);
                     font-size: .9rem;
                 }
+                .taskStart {
+                    display: none;
+                }
                 .taskName {
                     font-weight: 500;
                     display: block;
