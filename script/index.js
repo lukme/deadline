@@ -33,6 +33,7 @@ function createElement() {
             deadline = document.createElement('P'),
             name = document.createElement('P'),
             finishedBtn = document.createElement('BUTTON'),
+            finishedBtnImg = document.createElement('IMG'),
             endDate = `${taskData[2].value.slice(8, 10)}.${taskData[2].value.slice(5, 7)}.${taskData[2].value.slice(0, 4)}`;
         li.classList.add('task');
         div.classList.add('progressBar', 'firstPeriod');
@@ -40,6 +41,9 @@ function createElement() {
         deadline.classList.add('taskDeadline');
         name.classList.add('taskName');
         finishedBtn.classList.add('taskFinished');
+        finishedBtnImg.setAttribute('src', '/media/tic_archive.svg');
+        finishedBtnImg.setAttribute('alt', 'taskFinished');
+        finishedBtn.appendChild(finishedBtnImg);
         finishedBtn.addEventListener('click', removeElement);
         deadline.innerText = endDate;
         name.innerText = taskData[0].value;
