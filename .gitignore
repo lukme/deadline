@@ -5,4 +5,5 @@ media/project_files/Android.png
 media/project_files/Desktop-1.png
 media/project_files/Desktop-2.png
 
+*.css.map
 .sass-cache/
