@@ -6,7 +6,8 @@ let ul = document.querySelector('.tasks'),
     addContent = document.querySelector('.addContent'),
     count = false,
     taskData = [],
-    actualDatePara = document.querySelector('.currentDate');
+    actualDatePara = document.querySelector('.currentDate'),
+    welcomePlaceholder = document.querySelectorAll('.listPlaceholder');
 
 // Open and close add panel
 addBtn.addEventListener('click', menageAddPanel);
@@ -32,7 +33,7 @@ function initAddTask() {
         createElement();
         menageAddPanel();
         countPercent();
-    } else { return };
+    } else { alert("Please input both task name and deadline") };
 }
 
 function createElement() {
@@ -127,7 +128,14 @@ function countPercent() {
     }
     const actualDateParaDate = new Date();
     actualDatePara.innerText = `${dateZero(actualDateParaDate.getDate())}.${dateZero(actualDateParaDate.getMonth()+1)}.${dateZero(actualDateParaDate.getFullYear())}`;
+
+    // Hide welcome placeholder 
+    if (li.length !== 0) {
+        welcomePlaceholder.forEach((el) => {
+            el.style.display = 'none';
+        })
+    }
 }
 
-window.onload(countPercent());
+window.onload = countPercent;
 setInterval(countPercent, 60000);

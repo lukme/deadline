@@ -1,0 +1,12 @@
+<svg width="85" height="79" viewBox="0 0 85 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 71H84.7343V71C84.7343 75.4183 81.1526 79 76.7343 79H7.99999C3.58172 79 0 75.4183 0 71V71Z" fill="#373737"/>
+<path d="M8 79C3.58172 79 0 75.4183 0 71L0 27H8L8 79V79Z" fill="#373737"/>
+<path d="M77 78.7343L77 27H85V70.7343C85 75.1526 81.4183 78.7343 77 78.7343V78.7343Z" fill="#373737"/>
+<path d="M10 4L75 4C78.3137 4 81 6.68629 81 10V23L4 23L4 10C4 6.68629 6.68629 4 10 4Z" stroke="#373737" stroke-width="8"/>
+<rect x="37" y="44" width="10" height="10" rx="5" transform="rotate(-90 37 44)" fill="#373737"/>
+<rect x="56" y="44" width="10" height="10" rx="5" transform="rotate(-90 56 44)" fill="#373737"/>
+<rect x="18" y="44" width="10" height="10" rx="5" transform="rotate(-90 18 44)" fill="#373737"/>
+<rect x="37" y="60" width="10" height="10" rx="5" transform="rotate(-90 37 60)" fill="#373737"/>
+<rect x="56" y="60" width="10" height="10" rx="5" transform="rotate(-90 56 60)" fill="#373737"/>
+<rect x="18" y="60" width="10" height="10" rx="5" transform="rotate(-90 18 60)" fill="#373737"/>
+</svg>

@@ -56,6 +56,22 @@
             top: 15%;
             left: 7%;
         }
+        h2, h3 {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            margin-left: -13%;
+            width: 26%;
+            font-size: 1.1rem;
+            text-align: center;
+            opacity: .8;
+        }
+        h3 {
+            top: 50%;
+            font-size: 0.9rem;
+            opacity: .5;
+            font-weight: 400;
+        }
         .tasks {
             position: absolute;
             top: 0;
@@ -178,7 +194,7 @@
                 font-size: .8rem;
             }
             input, textarea {
-                @include size(90%, 40px);
+                @include size(100%, 40px);
                 margin-top: 5px;
                 margin-bottom: 20px;
                 padding-left: 5%;
@@ -187,8 +203,24 @@
                 box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
                 font-size: 0.8rem;
                 &::placeholder {
-                    opacity: 0.6;
+                    opacity: 0.4;
                     // line-height: 40px;
+                }
+                &::-webkit-clear-button,
+                &::-webkit-inner-spin-button {
+                  display:none;
+                }
+                &::-webkit-calendar-picker-indicator {
+                    color: rgba(255, 255, 255, 0);
+                    @include size(15px, 15px);
+                    background: #fff url('/media/calendar.svg') center center no-repeat;
+                    background-size: contain;
+                    margin-right: 10px;
+                    opacity: .3;
+                    transition: opacity 300ms ease;
+                    &:hover {
+                        opacity: .7;
+                    }
                 }
             }
             textarea {
@@ -230,6 +262,10 @@
             h1 {
                 display: none;
             }
+            h2, h3 {
+                width: 80%;
+                margin-left: -40%;
+            }
             .tasks {
                 padding: 240px 10% 6% 10%;
             }
@@ -264,7 +300,7 @@
 }
 
 // mobile
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 823px) {
     .container {
         header {
             .bigWave {
@@ -328,7 +364,7 @@
 }
 
 // mobile horizontally
-@media only screen and (max-width: 767px) and (orientation: landscape) {
+@media only screen and (max-width: 823px) and (orientation: landscape) {
     .container {
         header {
             .smallWave {
@@ -350,8 +386,21 @@
                 color: $darkGray;
             }
         }
-        .main .tasks {
-            padding: 100px 0 6% 0;
+        .main {
+            h2 {
+                top: 40%;
+            }
+            h3 {
+                top: 55%;
+            }
+            .tasks {
+                padding: 100px 0 6% 0;
+            }
+        }
+        .addPanel {
+            .addContent {
+                top: 100px;
+            }
         }
     }
 }
