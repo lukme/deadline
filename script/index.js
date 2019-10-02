@@ -5,7 +5,8 @@ let ul = document.querySelector('.tasks'),
     addPanel = document.querySelector('.addPanel'),
     addContent = document.querySelector('.addContent'),
     count = false,
-    taskData = [];
+    taskData = [],
+    actualDatePara = document.querySelector('.currentDate');
 
 // Open and close add panel
 addBtn.addEventListener('click', menageAddPanel);
@@ -94,9 +95,9 @@ function countPercent() {
             percentDifference = (realDifference / buildInDifference) * 100;
             percentValue = (100 - Math.floor(percentDifference));
 
-        console.log(buildInDifference);
-        console.log(realDifference);
-        console.log(percentValue);
+        // console.log(buildInDifference);
+        // console.log(realDifference);
+        // console.log(percentValue);
 
         console.log((realDifference / buildInDifference) * 100);
 
@@ -119,6 +120,14 @@ function countPercent() {
             el.children[0].style.width = percentValue + "%";
         }
     })
+
+    // set actual date on top
+    function dateZero(i) {
+        return `${i}`.padStart(2, "0");
+    }
+    const actualDateParaDate = new Date();
+    actualDatePara.innerText = `${dateZero(actualDateParaDate.getDate())}.${dateZero(actualDateParaDate.getMonth()+1)}.${dateZero(actualDateParaDate.getFullYear())}`;
 }
 
+window.onload(countPercent());
 setInterval(countPercent, 60000);
