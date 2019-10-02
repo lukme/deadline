@@ -1,4 +1,4 @@
 *.css linguist-detectable=false
-# *.scss linguist-detectable=false
+*.scss linguist-detectable=false
 *.svg linguist-detectable=false
 *.png linguist-detectable=false
