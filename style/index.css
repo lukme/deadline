@@ -150,11 +150,11 @@ button {
     height: 80px;
   }
   90% {
-    height: 60%;
+    height: 70%;
   }
   100% {
     width: 25%;
-    height: 60%;
+    height: 70%;
   }
 }
 
@@ -168,18 +168,18 @@ button {
     height: 80px;
   }
   90% {
-    height: 60%;
+    height: 70%;
   }
   100% {
     width: 25%;
-    height: 60%;
+    height: 70%;
   }
 }
 
 @-webkit-keyframes addClose {
   0% {
     width: 25%;
-    height: 60%;
+    height: 70%;
   }
   50% {
     height: 80px;
@@ -197,7 +197,7 @@ button {
 @keyframes addClose {
   0% {
     width: 25%;
-    height: 60%;
+    height: 70%;
   }
   50% {
     height: 80px;
@@ -371,6 +371,7 @@ button {
   transition: all 400ms ease-in-out;
   -webkit-animation: addTask 500ms ease-in-out;
           animation: addTask 500ms ease-in-out;
+  overflow: hidden;
 }
 
 .container .main .tasks .task .progressBar {
@@ -378,6 +379,8 @@ button {
   height: 100%;
   min-height: 75px;
   border-radius: 15px;
+  -webkit-transition: width 400ms ease-in-out;
+  transition: width 400ms ease-in-out;
 }
 
 .container .main .tasks .task .taskPercentage, .container .main .tasks .task .taskDeadline, .container .main .tasks .task .taskName {
@@ -488,8 +491,9 @@ button {
 .container .addPanel .addContent {
   position: absolute;
   top: 70px;
-  left: 15%;
-  width: 70%;
+  left: 10%;
+  width: 80%;
+  padding: 0 5%;
   opacity: 0;
 }
 
@@ -499,10 +503,15 @@ button {
   margin-bottom: 20px;
 }
 
+.container .addPanel .addContent label {
+  font-size: .8rem;
+}
+
 .container .addPanel .addContent input, .container .addPanel .addContent textarea {
-  width: 100%;
+  width: 90%;
   height: 40px;
-  margin-top: 20px;
+  margin-top: 5px;
+  margin-bottom: 20px;
   padding-left: 5%;
   border: none;
   border-radius: 15px;
@@ -641,6 +650,8 @@ button {
   }
   .container .addPanel .addContent {
     top: 170px;
+    height: 70%;
+    overflow-y: auto;
   }
   .container .addOpened {
     right: 0;

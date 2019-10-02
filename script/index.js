@@ -24,8 +24,8 @@ function menageAddPanel() {
 
 function initAddTask() {
     taskData = [
-        document.querySelector('.addContent').children[1], // Name
-        document.querySelector('.addContent').children[2], // Deadline
+        document.querySelector('.addContent').children[2], // Name
+        document.querySelector('.addContent').children[4], // Deadline
     ];
     if (taskData[0].value && taskData[1].value) {
         createElement();
@@ -46,7 +46,7 @@ function createElement() {
         endDate = `${taskData[1].value.slice(8, 10)}.${taskData[1].value.slice(5, 7)}.${taskData[1].value.slice(0, 4)}`; // dd.mm.rrrr
         startSeconds = Date.now();
     li.classList.add('task');
-    div.classList.add('progressBar', 'firstPeriod');
+    div.classList.add('progressBar');
     percentage.classList.add('taskPercentage');
     start.classList.add('taskStart');
     deadline.classList.add('taskDeadline');
@@ -83,28 +83,42 @@ function countPercent() {
     
     li.forEach((el) => {
 
-        let buildInStartSeconds = el.children[2].innerText,
-            // buildInStart = buildInStart,
+        const buildInStartSeconds = el.children[2].innerText,
             deadline = new Date(`${el.children[3].innerText.slice(3,5)}/${el.children[3].innerText.slice(0,2)}/${el.children[3].innerText.slice(6,10)}`),
             deadlineSeconds = Date.parse(deadline);
             today = Date.now(),
 
             buildInDifference = deadlineSeconds - buildInStartSeconds,
-            realDifference = deadlineSeconds - today;
+            realDifference = (deadlineSeconds - today);
 
             percentDifference = (realDifference / buildInDifference) * 100;
             percentValue = (100 - Math.floor(percentDifference));
 
-        // console.log(buildInDifference);
-        // console.log(realDifference);
+        console.log(buildInDifference);
+        console.log(realDifference);
         console.log(percentValue);
+
+        console.log((realDifference / buildInDifference) * 100);
+
+        if (percentValue <= 40) {
+            el.children[0].style.backgroundColor = "rgba(64, 221, 127, .55)";
+        } else if (percentValue > 40 && percentValue <= 60) {
+            el.children[0].style.backgroundColor = "rgba(237, 194, 43, .55)";
+        } else if (percentValue > 60 && percentValue <= 80) {
+            el.children[0].style.backgroundColor = "rgba(248, 120, 3, .55)";
+        } else if (percentValue > 80) {
+            el.children[0].style.backgroundColor = "rgba(243, 0, 0, .55)";
+        }
 
         if (percentValue > 100 || percentValue <= 0) {
             el.children[1].innerText = 100 + "%";
+            el.children[0].style.width = 100 + "%";
+            el.children[0].style.backgroundColor = "rgba(243, 0, 0, .55)";
         } else {
             el.children[1].innerText = percentValue + "%";
+            el.children[0].style.width = percentValue + "%";
         }
     })
 }
 
-setInterval(countPercent, 10000);
+setInterval(countPercent, 60000);

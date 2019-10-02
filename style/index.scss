@@ -76,11 +76,13 @@
                 z-index: 2;
                 transition: all 400ms ease-in-out;
                 animation: addTask 500ms ease-in-out;
+                overflow: hidden;
                 .progressBar {
                     position: absolute;
                     height: 100%;
                     min-height: 75px;
                     border-radius: 15px;
+                    transition: width 400ms ease-in-out;
                 }
                 .taskPercentage, .taskDeadline, .taskName {
                     position: relative;
@@ -163,17 +165,22 @@
         .addContent {
             position: absolute;
             top: 70px;
-            left: 15%;
-            width: 70%;
+            left: 10%;
+            width: 80%;
+            padding: 0 5%;
             opacity: 0;
             h3 {
                 color: rgba($gray, .5);
                 font-size: .8rem;
                 margin-bottom: 20px;
             }
+            label {
+                font-size: .8rem;
+            }
             input, textarea {
-                @include size(100%, 40px);
-                margin-top: 20px;
+                @include size(90%, 40px);
+                margin-top: 5px;
+                margin-bottom: 20px;
                 padding-left: 5%;
                 border: none;
                 border-radius: 15px;
@@ -299,6 +306,8 @@
         }
         .addPanel .addContent {
             top: 170px;
+            height: 70%;
+            overflow-y: auto;
         }
         .addOpened {
             right: 0;

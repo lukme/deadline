@@ -28,7 +28,7 @@
         </header>
 
         <section class="main">
-            <h1>Tasks</h1>
+            <h1 translate="no">Tasks</h1>
             <ul class="tasks">
                 <!-- <li class="task">
                     <div class="progressBar firstPeriod"></div>
@@ -49,10 +49,13 @@
             </div>
             <div class="addContent">
                 <h3>Add task</h3>
-                <input type="text" placeholder="Task name">
-                <!-- <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Start date"> -->
-                <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Deadline">
-                <textarea placeholder="Task description"></textarea>
+                <label for="taskName">Task Name:</label>
+                <input type="text" id="taskName">
+                <label for="deadline">Deadline:</label>
+                <input type="date" id="deadline">
+                <!-- <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Deadline"> -->
+                <label for="textarea">Task description:</label>
+                <textarea id="textarea"></textarea>
                 <button class="addSubmit">
                     <img src="/media/tic.svg" alt="addTask">
                 </button>
