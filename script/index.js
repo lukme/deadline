@@ -1,5 +1,4 @@
 let ul = document.querySelector('.tasks'),
-    // li = document.querySelectorAll('.task'),
     addBtn = document.querySelector('.addHandle'),
     addSubmitBtn = document.querySelector('.addSubmit'),
     addPanel = document.querySelector('.addPanel'),
@@ -138,4 +137,4 @@ function countPercent() {
 }
 
 window.onload = countPercent;
-setInterval(countPercent, 60000);
+setInterval(countPercent, 10000);

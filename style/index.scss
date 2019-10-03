@@ -98,7 +98,7 @@
                     height: 100%;
                     min-height: 75px;
                     border-radius: 15px;
-                    transition: width 400ms ease-in-out;
+                    transition: all 600ms ease-in-out;
                 }
                 .taskPercentage, .taskDeadline, .taskName {
                     position: relative;

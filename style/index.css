@@ -397,8 +397,8 @@ button {
   height: 100%;
   min-height: 75px;
   border-radius: 15px;
-  -webkit-transition: width 400ms ease-in-out;
-  transition: width 400ms ease-in-out;
+  -webkit-transition: all 600ms ease-in-out;
+  transition: all 600ms ease-in-out;
 }
 
 .container .main .tasks .task .taskPercentage, .container .main .tasks .task .taskDeadline, .container .main .tasks .task .taskName {
