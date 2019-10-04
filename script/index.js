@@ -111,7 +111,7 @@ class RemoveElement {
     static remove(el, e) {
         const index = tasks.indexOf(el);
         tasks.splice(index, 1);
-        e.target.parentElement.parentElement.remove();
+        e.target.parentElement.remove();
         saveToLocalStorage();
     }
 }

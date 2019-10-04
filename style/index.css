@@ -303,7 +303,8 @@ button {
             position: absolute;
             top: 25%;
             left: 25%;
-            opacity: .6; }
+            opacity: .6;
+            pointer-events: none; }
   .container .addPanel {
     position: absolute;
     bottom: 30px;
