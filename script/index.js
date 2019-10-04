@@ -171,7 +171,7 @@ class InitApp {
             if (reminderTasks.children[0] !== undefined) {
                 reminder.style.animation = "reminderSlideIn 2000ms ease-in-out forwards";
                 reminder.children[2].addEventListener('click', function() {
-                    this.parentNode.style.animation = "reminderSlideOut 800ms ease-in-out forwards"
+                    this.parentNode.style.animation = "reminderSlideOut 600ms ease-in-out forwards"
                 })
             }
         }
@@ -242,4 +242,4 @@ function getFromLocalStorage() {
 
 const initApp = new InitApp;
 window.onload = updateDates;
-// setInterval(updateDates, 10000);
+setInterval(updateDates, 10000);
