@@ -4,10 +4,12 @@ let ul = document.querySelector('.tasks'),
     addSubmitBtn = document.querySelector('.addSubmit'),
     addPanel = document.querySelector('.addPanel'),
     addContent = document.querySelector('.addContent'),
-    count = false,
+    addPanelCount = false,
+    descriptionCount = false,
     taskData = [
         document.querySelector('.addContent').children[2], // Name
-        document.querySelector('.addContent').children[4] // Deadline
+        document.querySelector('.addContent').children[4], // Deadline
+        document.querySelector('.addContent').children[6] // Description
     ],
     actualDatePara = document.querySelector('.currentDate'),
     welcomePlaceholder = document.querySelectorAll('.listPlaceholder'),
@@ -19,12 +21,12 @@ let ul = document.querySelector('.tasks'),
 addBtn.addEventListener('click', menageAddPanel);
 
 function menageAddPanel() {
-    if (!count) {
-        count = !count;
+    if (!addPanelCount) {
+        addPanelCount = !addPanelCount;
         addPanel.className = "addPanel addOpened";
         addContent.className = "addContent shown";
     } else {
-        count = !count;
+        addPanelCount = !addPanelCount;
         addPanel.className = "addPanel addClosed";
         addContent.className = "addContent hidden";
     }
@@ -35,6 +37,7 @@ class Task {
         this.name = document.querySelector('.addContent').children[2].value;
         this.start = Date.now();
         this.deadline = document.querySelector('.addContent').children[4].value;
+        this.description = document.querySelector('.addContent').children[6].value;
     }
 }
 
@@ -57,6 +60,8 @@ class AddTask {
             start = document.createElement('P'),
             deadline = document.createElement('P'),
             name = document.createElement('P'),
+            descriptionBtn = document.createElement('P'),
+            description = document.createElement('P'),
             finishedBtn = document.createElement('BUTTON'),
             finishedBtnImg = document.createElement('IMG'),
             endDate = `${el.deadline.slice(8, 10)}.${el.deadline.slice(5, 7)}.${el.deadline.slice(0, 4)}`; // dd.mm.rrrr
@@ -66,8 +71,9 @@ class AddTask {
         start.classList.add('taskStart');
         deadline.classList.add('taskDeadline');
         name.classList.add('taskName');
+        description.classList.add('taskDescription');
+        descriptionBtn.classList.add('descriptionBtn');
         finishedBtn.classList.add('taskFinished');
-        finishedBtn.id = el;
         finishedBtnImg.setAttribute('src', '/media/tic_archive.svg');
         finishedBtnImg.setAttribute('alt', 'taskFinished');
         finishedBtn.appendChild(finishedBtnImg);
@@ -75,15 +81,22 @@ class AddTask {
             RemoveElement.remove(el, e)
         }.bind(finishedBtn));
         name.innerText = el.name;
+        descriptionBtn.innerText = "info";
+        description.innerText = el.description;
         start.innerText = el.start;
         deadline.innerText = endDate;
         li.appendChild(div);
         li.appendChild(percentage);
         li.appendChild(start);
         li.appendChild(deadline);
+        (el.description) ? li.appendChild(descriptionBtn) : null;
         li.appendChild(name);
+        li.appendChild(description);
         li.appendChild(finishedBtn);
         ul.insertBefore(li, ul.children[0]);
+        descriptionBtn.addEventListener('click', function(e) {
+            Description.showDescription(e)
+        })
 
         // Clear the inputs
         taskData.forEach(el => {
@@ -100,6 +113,19 @@ class RemoveElement {
         tasks.splice(index, 1);
         e.target.parentElement.parentElement.remove();
         saveToLocalStorage();
+    }
+}
+
+class Description {
+    static showDescription(e) {
+        
+        if (!descriptionCount) {
+            descriptionCount = !descriptionCount;
+            e.target.parentElement.children[6].style.display = "block";
+        } else {
+            descriptionCount = !descriptionCount;
+            e.target.parentElement.children[6].style.display = "none";            
+        }
     }
 }
 

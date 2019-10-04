@@ -159,7 +159,8 @@ button {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #494949 url("/media/background.png") center center repeat; }
+  background: #fff url("/media/background.png") center center repeat;
+  overflow: hidden; }
   .container header {
     pointer-events: none;
     position: absolute;
@@ -250,7 +251,7 @@ button {
           min-height: 75px;
           border-radius: 15px;
           transition: all 600ms ease-in-out; }
-        .container .main .tasks .task .taskPercentage, .container .main .tasks .task .taskDeadline, .container .main .tasks .task .taskName {
+        .container .main .tasks .task .taskPercentage, .container .main .tasks .task .taskDeadline, .container .main .tasks .task .taskName, .container .main .tasks .task .descriptionBtn {
           position: relative;
           display: inline-block;
           z-index: 4;
@@ -259,17 +260,29 @@ button {
           font-size: 1.1rem;
           color: rgba(55, 55, 55, 0.6);
           margin: 10px 30px; }
-        .container .main .tasks .task .taskDeadline {
+        .container .main .tasks .task .taskDeadline, .container .main .tasks .task .descriptionBtn {
           color: rgba(73, 73, 73, 0.8);
           font-size: .9rem; }
+        .container .main .tasks .task .descriptionBtn {
+          margin: 0 30px;
+          color: rgba(73, 73, 73, 0.3);
+          cursor: pointer;
+          transition: all 200ms ease; }
+          .container .main .tasks .task .descriptionBtn:hover {
+            color: rgba(73, 73, 73, 0.8); }
         .container .main .tasks .task .taskStart {
           display: none; }
-        .container .main .tasks .task .taskName {
+        .container .main .tasks .task .taskName, .container .main .tasks .task .taskDescription {
           font-weight: 500;
           display: block;
           margin: 0 30px;
           line-height: 1.5rem;
           font-size: .9rem; }
+        .container .main .tasks .task .taskDescription {
+          display: none;
+          font-size: .8rem;
+          color: rgba(73, 73, 73, 0.8);
+          margin: 0 85px 0 45px; }
         .container .main .tasks .task .taskFinished {
           position: absolute;
           top: 50%;
@@ -436,7 +449,7 @@ button {
     animation: none;
     width: 70px;
     height: 70px; } }
-@media screen and (max-width: 823px) {
+@media screen and (max-width: 767px) {
   .container header .bigWave {
     display: none; }
   .container header .smallWave {
