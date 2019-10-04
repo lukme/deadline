@@ -1,12 +1,19 @@
 let ul = document.querySelector('.tasks'),
+    tasks = [],
     addBtn = document.querySelector('.addHandle'),
     addSubmitBtn = document.querySelector('.addSubmit'),
     addPanel = document.querySelector('.addPanel'),
     addContent = document.querySelector('.addContent'),
     count = false,
-    taskData = [],
+    taskData = [
+        document.querySelector('.addContent').children[2], // Name
+        document.querySelector('.addContent').children[4] // Deadline
+    ],
     actualDatePara = document.querySelector('.currentDate'),
-    welcomePlaceholder = document.querySelectorAll('.listPlaceholder');
+    welcomePlaceholder = document.querySelectorAll('.listPlaceholder'),
+    reminder = document.querySelector('.reminder'),
+    reminderTasks = document.querySelector('.reminder .tasksNames'),
+    el = "";
 
 // Open and close add panel
 addBtn.addEventListener('click', menageAddPanel);
@@ -23,83 +30,141 @@ function menageAddPanel() {
     }
 }
 
-function initAddTask() {
-    taskData = [
-        document.querySelector('.addContent').children[2], // Name
-        document.querySelector('.addContent').children[4], // Deadline
-    ];
-    if (taskData[0].value && taskData[1].value) {
-        createElement();
-        menageAddPanel();
-        countPercent();
-    } else { alert("Please input both task name and deadline") };
+class Task {
+    constructor() {
+        this.name = document.querySelector('.addContent').children[2].value;
+        this.start = Date.now();
+        this.deadline = document.querySelector('.addContent').children[4].value;
+    }
 }
 
-function createElement() {
-    const li = document.createElement('LI'),
-        div = document.createElement('DIV'),
-        percentage = document.createElement('P'),
-        start = document.createElement('P'),
-        deadline = document.createElement('P'),
-        name = document.createElement('P'),
-        finishedBtn = document.createElement('BUTTON'),
-        finishedBtnImg = document.createElement('IMG'),
-        endDate = `${taskData[1].value.slice(8, 10)}.${taskData[1].value.slice(5, 7)}.${taskData[1].value.slice(0, 4)}`; // dd.mm.rrrr
-        startSeconds = Date.now();
-    li.classList.add('task');
-    div.classList.add('progressBar');
-    percentage.classList.add('taskPercentage');
-    start.classList.add('taskStart');
-    deadline.classList.add('taskDeadline');
-    name.classList.add('taskName');
-    finishedBtn.classList.add('taskFinished');
-    finishedBtnImg.setAttribute('src', '/media/tic_archive.svg');
-    finishedBtnImg.setAttribute('alt', 'taskFinished');
-    finishedBtn.appendChild(finishedBtnImg);
-    finishedBtn.addEventListener('click', removeElement);
-    start.innerText = startSeconds;
-    deadline.innerText = endDate;
-    name.innerText = taskData[0].value;
-    li.appendChild(div);
-    li.appendChild(percentage);
-    li.appendChild(start);
-    li.appendChild(deadline);
-    li.appendChild(name);
-    li.appendChild(finishedBtn);
-    ul.insertBefore(li, ul.children[0]);
-// Clear the inputs
-    taskData.forEach(el => {
-        el.value = "";
-    });
+class AddTask {
+    constructor(tasks) {
+        this.tasks = tasks;
+    }
+
+    createObject() {
+        let task = new Task;
+        tasks.push(task);
+        el = task;
+        menageAddPanel()
+    }
+
+    createElements(el) {
+        const li = document.createElement('LI'),
+            div = document.createElement('DIV'),
+            percentage = document.createElement('P'),
+            start = document.createElement('P'),
+            deadline = document.createElement('P'),
+            name = document.createElement('P'),
+            finishedBtn = document.createElement('BUTTON'),
+            finishedBtnImg = document.createElement('IMG'),
+            endDate = `${el.deadline.slice(8, 10)}.${el.deadline.slice(5, 7)}.${el.deadline.slice(0, 4)}`; // dd.mm.rrrr
+        li.classList.add('task');
+        div.classList.add('progressBar');
+        percentage.classList.add('taskPercentage');
+        start.classList.add('taskStart');
+        deadline.classList.add('taskDeadline');
+        name.classList.add('taskName');
+        finishedBtn.classList.add('taskFinished');
+        finishedBtn.id = el;
+        finishedBtnImg.setAttribute('src', '/media/tic_archive.svg');
+        finishedBtnImg.setAttribute('alt', 'taskFinished');
+        finishedBtn.appendChild(finishedBtnImg);
+        finishedBtn.addEventListener('click', function (e) {
+            RemoveElement.remove(el, e)
+        }.bind(finishedBtn));
+        name.innerText = el.name;
+        start.innerText = el.start;
+        deadline.innerText = endDate;
+        li.appendChild(div);
+        li.appendChild(percentage);
+        li.appendChild(start);
+        li.appendChild(deadline);
+        li.appendChild(name);
+        li.appendChild(finishedBtn);
+        ul.insertBefore(li, ul.children[0]);
+
+        // Clear the inputs
+        taskData.forEach(el => {
+            el.value = "";
+        });
+        saveToLocalStorage()
+        updateDates();
+    }
 }
 
-function removeElement() {
-    this.parentNode.parentNode.removeChild(this.parentNode);
+class RemoveElement {
+    static remove(el, e) {
+        const index = tasks.indexOf(el);
+        tasks.splice(index, 1);
+        e.target.parentElement.parentElement.remove();
+        saveToLocalStorage();
+    }
 }
 
-addSubmitBtn.addEventListener('click', initAddTask);
+getFromLocalStorage()
 
-function countPercent() {
+class Reminder {
+    constructor() {
+        this.tomorrowDeadlines = [];
+    }
+    checkTomorrow(el) {
+        const today = Date.now(),
+            oneDay = 86400000,
+            deadline = Date.parse(el.deadline);
+        ((deadline - today) <= oneDay) ? this.tomorrowDeadlines.push(el) : null;
+    }
+    showTomorrows() {
+        reminderTasks.innerText = [];
+        (this.tomorrowDeadlines.length > 1) ? reminder.children[0].innerText = 'You have deadlines tomorrow!' : null;
+        this.tomorrowDeadlines.forEach((el) => {
+            const reminderObj = document.createElement('P');
+            reminderObj.innerText = el.name;
+            reminderTasks.appendChild(reminderObj);
+        })
+    }
+}
+
+class InitApp {
+    constructor() {
+        this.addTask = new AddTask();
+        this.reminder = new Reminder();
+        this.initAddBtn = document.querySelector('.addSubmit').addEventListener('click', () => {
+            if (document.querySelector('.addContent').children[2].value && document.querySelector('.addContent').children[4].value) {
+                this.addTask.createObject();
+                this.addTask.createElements(el);
+            } else { alert("Please input both task name and deadline") };
+        });
+        if (tasks.length > 0) {
+            tasks.forEach((el) => {
+                this.addTask.createElements(el);
+                this.reminder.checkTomorrow(el);
+            })
+            this.reminder.showTomorrows();
+            if (reminderTasks.children[0] !== undefined) {
+                reminder.style.animation = "reminderSlideIn 2000ms ease-in-out forwards";
+                reminder.children[2].addEventListener('click', function() {
+                    this.parentNode.style.animation = "reminderSlideOut 800ms ease-in-out forwards"
+                })
+            }
+        }
+    }
+}
+
+function updateDates() {
     let li = document.querySelectorAll('.task');
-    
+
     li.forEach((el) => {
-
         const buildInStartSeconds = el.children[2].innerText,
-            deadline = new Date(`${el.children[3].innerText.slice(3,5)}/${el.children[3].innerText.slice(0,2)}/${el.children[3].innerText.slice(6,10)}`),
+            deadline = new Date(`${el.children[3].innerText.slice(3, 5)}/${el.children[3].innerText.slice(0, 2)}/${el.children[3].innerText.slice(6, 10)}`),
             deadlineSeconds = Date.parse(deadline);
-            today = Date.now(),
+        today = Date.now(),
 
-            buildInDifference = deadlineSeconds - buildInStartSeconds,
-            realDifference = (deadlineSeconds - today);
-
-            percentDifference = (realDifference / buildInDifference) * 100;
-            percentValue = (100 - Math.floor(percentDifference));
-
-        // console.log(buildInDifference);
-        // console.log(realDifference);
-        // console.log(percentValue);
-
-        console.log((realDifference / buildInDifference) * 100);
+        buildInDifference = deadlineSeconds - buildInStartSeconds,
+        realDifference = (deadlineSeconds - today);
+        percentDifference = (realDifference / buildInDifference) * 100;
+        percentValue = (100 - Math.floor(percentDifference));
 
         if (percentValue <= 40) {
             el.children[0].style.backgroundColor = "rgba(64, 221, 127, .55)";
@@ -126,7 +191,7 @@ function countPercent() {
         return `${i}`.padStart(2, "0");
     }
     const actualDateParaDate = new Date();
-    actualDatePara.innerText = `${dateZero(actualDateParaDate.getDate())}.${dateZero(actualDateParaDate.getMonth()+1)}.${dateZero(actualDateParaDate.getFullYear())}`;
+    actualDatePara.innerText = `${dateZero(actualDateParaDate.getDate())}.${dateZero(actualDateParaDate.getMonth() + 1)}.${dateZero(actualDateParaDate.getFullYear())}`;
 
     // Hide welcome placeholder 
     if (li.length !== 0) {
@@ -134,7 +199,21 @@ function countPercent() {
             el.style.display = 'none';
         })
     }
+
 }
 
-window.onload = countPercent;
-setInterval(countPercent, 10000);
+function saveToLocalStorage() {
+    const elements = JSON.stringify(tasks);
+    localStorage.setItem('tasks', elements);
+}
+
+function getFromLocalStorage() {
+    if (localStorage.length !== 0) {
+        const elements = localStorage.getItem('tasks');
+        tasks = JSON.parse(elements);
+    }
+}
+
+const initApp = new InitApp;
+window.onload = updateDates;
+// setInterval(updateDates, 10000);
