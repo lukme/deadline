@@ -11,6 +11,8 @@ let ul = document.querySelector('.tasks'),
     ],
     actualDatePara = document.querySelector('.currentDate'),
     welcomePlaceholder = document.querySelectorAll('.listPlaceholder'),
+    reminder = document.querySelector('.reminder'),
+    reminderTasks = document.querySelector('.reminder .tasksNames'),
     el = "";
 
 // Open and close add panel
@@ -44,7 +46,6 @@ class AddTask {
     createObject() {
         let task = new Task;
         tasks.push(task);
-        console.log(tasks);
         el = task;
     }
 
@@ -69,7 +70,7 @@ class AddTask {
         finishedBtnImg.setAttribute('src', '/media/tic_archive.svg');
         finishedBtnImg.setAttribute('alt', 'taskFinished');
         finishedBtn.appendChild(finishedBtnImg);
-        finishedBtn.addEventListener('click', function(e) {
+        finishedBtn.addEventListener('click', function (e) {
             RemoveElement.remove(el, e)
         }.bind(finishedBtn));
         name.innerText = el.name;
@@ -94,7 +95,8 @@ class AddTask {
 
 class RemoveElement {
     static remove(el, e) {
-        // tasks.splice(tasks.length, 1);
+        const index = tasks.indexOf(el);
+        tasks.splice(index, 1);
         e.target.parentElement.parentElement.remove();
         saveToLocalStorage();
     }
@@ -102,17 +104,46 @@ class RemoveElement {
 
 getFromLocalStorage()
 
+class Reminder {
+    constructor() {
+        this.tomorrowDeadlines = [];
+    }
+    checkTomorrow(el) {
+        const today = Date.now(),
+            oneDay = 86400000,
+            deadline = Date.parse(el.deadline);
+        ((deadline - today) <= oneDay) ? this.tomorrowDeadlines.push(el) : null;
+    }
+    showTomorrows() {
+        reminderTasks.innerText = [];
+        (this.tomorrowDeadlines.length > 1) ? reminder.children[0].innerText = 'You have deadlines tomorrow!' : null;
+        this.tomorrowDeadlines.forEach((el) => {
+            const reminderObj = document.createElement('P');
+            reminderObj.innerText = el.name;
+            reminderTasks.appendChild(reminderObj);
+        })
+    }
+}
+
 class InitApp {
     constructor() {
         this.addTask = new AddTask();
+        this.reminder = new Reminder();
         this.initAddBtn = document.querySelector('.addSubmit').addEventListener('click', () => {
-            this.addTask.createObject();
-            this.addTask.createElements(el);
+            if (document.querySelector('.addContent').children[2].value && document.querySelector('.addContent').children[4].value) {
+                this.addTask.createObject();
+                this.addTask.createElements(el);
+            } else { alert("Please input both task name and deadline") };
         });
         if (tasks.length > 0) {
             tasks.forEach((el) => {
-                // console.log(el);
                 this.addTask.createElements(el);
+                this.reminder.checkTomorrow(el);
+            })
+            this.reminder.showTomorrows();
+            reminder.style.animation = "reminderSlideIn 2000ms ease-in-out forwards";
+            reminder.children[2].addEventListener('click', function() {
+                this.parentNode.style.animation = "reminderSlideOut 800ms ease-in-out forwards"
             })
         }
     }
@@ -127,12 +158,10 @@ function updateDates() {
             deadlineSeconds = Date.parse(deadline);
         today = Date.now(),
 
-            buildInDifference = deadlineSeconds - buildInStartSeconds,
-            realDifference = (deadlineSeconds - today);
+        buildInDifference = deadlineSeconds - buildInStartSeconds,
+        realDifference = (deadlineSeconds - today);
         percentDifference = (realDifference / buildInDifference) * 100;
         percentValue = (100 - Math.floor(percentDifference));
-
-        // console.log((realDifference / buildInDifference) * 100);  // TEMP
 
         if (percentValue <= 40) {
             el.children[0].style.backgroundColor = "rgba(64, 221, 127, .55)";
@@ -160,6 +189,14 @@ function updateDates() {
     }
     const actualDateParaDate = new Date();
     actualDatePara.innerText = `${dateZero(actualDateParaDate.getDate())}.${dateZero(actualDateParaDate.getMonth() + 1)}.${dateZero(actualDateParaDate.getFullYear())}`;
+
+    // Hide welcome placeholder 
+    if (li.length !== 0) {
+        welcomePlaceholder.forEach((el) => {
+            el.style.display = 'none';
+        })
+    }
+
 }
 
 function saveToLocalStorage() {
