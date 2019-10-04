@@ -194,6 +194,7 @@
             bottom: 0px;
             right: 0px;
             @include size(80px, 80px);
+            z-index: 14;
         }
         .addContent {
             position: absolute;
@@ -276,7 +277,7 @@
         opacity: 0;
         transform: translateY(100%);
         h3 {
-            margin-top: 5%;
+            margin-top: 7%;
             color: rgba(243, 0, 0, .7);
             font-size: .9rem;
         }
@@ -286,7 +287,7 @@
             p {
                 color: rgba($gray, .8);
                 margin-bottom: 5px;
-                font-size: .7rem;
+                font-size: .8rem;
             }
         }
         button {
@@ -329,6 +330,10 @@
                 bottom: 24px;
                 right: 24px;
             }
+            .addContent {
+                top: 20%;
+                height: 80%;
+            }
         }
         .addOpened {
             right: 30%;
@@ -342,7 +347,11 @@
             width: 70px;
             height: 70px;
         }
-        
+        .reminder {
+            right: 50%;
+            margin-right: -17%;
+            width: 34%;
+        }
     }
 }
 
@@ -388,8 +397,8 @@
             }
         }
         .addPanel .addContent {
-            top: 170px;
-            height: 70%;
+            // top: 170px;
+            // height: 70%;
             overflow-y: auto;
         }
         .addOpened {
@@ -406,6 +415,23 @@
             animation: none;
             width: 70px;
             height: 70px;
+        }
+        .reminder {
+            right: 50%;
+            margin-right: -50%;
+            width: 100%;
+        }
+    }
+}
+
+// little height mobile
+@media only screen and (max-width: 823px) and (max-height: 700px) {
+    .container {
+        .addPanel {
+            .addContent {
+                top: 20%;
+                height: 80%;
+            }
         }
     }
 }
