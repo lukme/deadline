@@ -1,4 +1,7 @@
-# DeadLine
+<p align="center">
+  <img src="https://deadline.netlify.com/media/DL_logo.png" width="350">
+</p>
+
 > DeadLine is a work menagement aplication made to help you prioritize your tasks
 
 --- Project in development
