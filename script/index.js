@@ -234,7 +234,7 @@ function saveToLocalStorage() {
 }
 
 function getFromLocalStorage() {
-    if (localStorage.length !== 0) {
+    if (localStorage.getItem('tasks') !== '[]') {
         const elements = localStorage.getItem('tasks');
         tasks = JSON.parse(elements);
     }
