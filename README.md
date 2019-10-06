@@ -13,7 +13,7 @@ Deadline was created due to small amount of apps that help you visualize how muc
 * JavaScript
 * SCSS
 * HTML
-Graphics made with Figma.
+* Graphics made with Figma
 
 ## Status
 Project finished and stable.
