@@ -6,7 +6,6 @@
     top: 0;
     left: 0;
     @include size(100vw, 100vh);
-    // background: $gray url('/media/background_gray.png') center center repeat;
     background: #fff url('/media/background.png') center center repeat;
     overflow: hidden;
     header {
@@ -199,7 +198,8 @@
         }
         .addContent {
             position: absolute;
-            top: 70px;
+            top: 50%;
+            transform: translateY(-50%);
             left: 10%;
             width: 80%;
             padding: 0 5%;

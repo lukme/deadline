@@ -4,47 +4,72 @@
   font-family: 'Raleway', sans-serif;
   font-size: 20px;
   color: #373737;
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
 .firstPeriod {
   background-color: rgba(64, 221, 127, 0.55);
-  width: 32%; }
+  width: 32%;
+}
 
 .secondPeriod {
   background-color: rgba(237, 194, 43, 0.55);
-  width: 48%; }
+  width: 48%;
+}
 
 .thirdPeriod {
   background-color: rgba(248, 120, 3, 0.55);
-  width: 64%; }
+  width: 64%;
+}
 
 .fourthPeriod {
   background-color: rgba(243, 0, 0, 0.55);
-  width: 96%; }
+  width: 96%;
+}
 
 ::-webkit-scrollbar {
-  display: none; }
+  display: none;
+}
 
 button {
   cursor: pointer;
-  border: none; }
+  border: none;
+}
 
 .container .addOpened {
   border-radius: 20px;
   border-bottom-right-radius: 40px;
   background-color: #fff;
-  animation: addOpen 600ms forwards; }
-  .container .addOpened:hover {
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25); }
-  .container .addOpened img {
-    transform: rotate(45deg); }
+  -webkit-animation: addOpen 600ms forwards;
+          animation: addOpen 600ms forwards;
+}
+
+.container .addOpened:hover {
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+}
+
+.container .addOpened img {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
 .container .addClosed {
-  animation: addClose 600ms forwards;
-  background-color: rgba(255, 255, 255, 0.4); }
+  -webkit-animation: addClose 600ms forwards;
+          animation: addClose 600ms forwards;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
 .container .shown {
-  animation: makeVisible 1000ms ease-in-out forwards; }
+  -webkit-animation: makeVisible 1000ms ease-in-out forwards;
+          animation: makeVisible 1000ms ease-in-out forwards;
+}
+
 .container .hidden {
-  animation: makeHidden 500ms ease-in-out forwards; }
+  -webkit-animation: makeHidden 500ms ease-in-out forwards;
+          animation: makeHidden 500ms ease-in-out forwards;
+}
 
 * {
   margin: 0;
@@ -52,105 +77,342 @@ button {
   font-family: 'Raleway', sans-serif;
   font-size: 20px;
   color: #373737;
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
 .firstPeriod {
   background-color: rgba(64, 221, 127, 0.55);
-  width: 32%; }
+  width: 32%;
+}
 
 .secondPeriod {
   background-color: rgba(237, 194, 43, 0.55);
-  width: 48%; }
+  width: 48%;
+}
 
 .thirdPeriod {
   background-color: rgba(248, 120, 3, 0.55);
-  width: 64%; }
+  width: 64%;
+}
 
 .fourthPeriod {
   background-color: rgba(243, 0, 0, 0.55);
-  width: 96%; }
+  width: 96%;
+}
 
 ::-webkit-scrollbar {
-  display: none; }
+  display: none;
+}
 
 button {
   cursor: pointer;
-  border: none; }
+  border: none;
+}
 
 .container .addOpened {
   border-radius: 20px;
   border-bottom-right-radius: 40px;
   background-color: #fff;
-  animation: addOpen 600ms forwards; }
-  .container .addOpened:hover {
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25); }
-  .container .addOpened img {
-    transform: rotate(45deg); }
+  -webkit-animation: addOpen 600ms forwards;
+          animation: addOpen 600ms forwards;
+}
+
+.container .addOpened:hover {
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+}
+
+.container .addOpened img {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
 .container .addClosed {
-  animation: addClose 600ms forwards;
-  background-color: rgba(255, 255, 255, 0.4); }
+  -webkit-animation: addClose 600ms forwards;
+          animation: addClose 600ms forwards;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
 .container .shown {
-  animation: makeVisible 1000ms ease-in-out forwards; }
+  -webkit-animation: makeVisible 1000ms ease-in-out forwards;
+          animation: makeVisible 1000ms ease-in-out forwards;
+}
+
 .container .hidden {
-  animation: makeHidden 500ms ease-in-out forwards; }
+  -webkit-animation: makeHidden 500ms ease-in-out forwards;
+          animation: makeHidden 500ms ease-in-out forwards;
+}
+
+@-webkit-keyframes addOpen {
+  0% {
+    width: 80px;
+    height: 80px;
+  }
+  50% {
+    width: 25%;
+    height: 80px;
+  }
+  90% {
+    height: 70%;
+  }
+  100% {
+    width: 25%;
+    height: 70%;
+  }
+}
 
 @keyframes addOpen {
   0% {
     width: 80px;
-    height: 80px; }
+    height: 80px;
+  }
   50% {
     width: 25%;
-    height: 80px; }
+    height: 80px;
+  }
   90% {
-    height: 70%; }
+    height: 70%;
+  }
   100% {
     width: 25%;
-    height: 70%; } }
+    height: 70%;
+  }
+}
+
+@-webkit-keyframes addClose {
+  0% {
+    width: 25%;
+    height: 70%;
+  }
+  50% {
+    height: 80px;
+    width: 25%;
+  }
+  90% {
+    width: 80px;
+  }
+  100% {
+    width: 80px;
+    height: 80px;
+  }
+}
+
 @keyframes addClose {
   0% {
     width: 25%;
-    height: 70%; }
+    height: 70%;
+  }
   50% {
     height: 80px;
-    width: 25%; }
+    width: 25%;
+  }
   90% {
-    width: 80px; }
+    width: 80px;
+  }
   100% {
     width: 80px;
-    height: 80px; } }
+    height: 80px;
+  }
+}
+
+@-webkit-keyframes makeVisible {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes makeVisible {
   0% {
-    opacity: 0; }
+    opacity: 0;
+  }
   100% {
-    opacity: 1; } }
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes makeHidden {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @keyframes makeHidden {
   0% {
-    opacity: 1; }
+    opacity: 1;
+  }
   50% {
-    opacity: 0; }
+    opacity: 0;
+  }
   100% {
-    opacity: 0; } }
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes addTask {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+}
+
 @keyframes addTask {
   from {
-    transform: scale(0);
-    opacity: 0; } }
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes reminderSlideIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  70% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 @keyframes reminderSlideIn {
   0% {
     opacity: 0;
-    transform: translateY(100%); }
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
   70% {
     opacity: 0;
-    transform: translateY(100%); }
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
   100% {
     opacity: 1;
-    transform: translateY(0); } }
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes reminderSlideOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+}
+
 @keyframes reminderSlideOut {
   0% {
     opacity: 1;
-    transform: translateY(0); }
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
   100% {
     opacity: 0;
-    transform: translateY(100%); } }
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  @-webkit-keyframes addOpen {
+    0% {
+      width: 80px;
+      height: 80px;
+    }
+    50% {
+      width: 25%;
+      height: 80px;
+    }
+    90% {
+      height: calc(100% - 50px);
+    }
+    100% {
+      width: 25%;
+      height: calc(100% - 50px);
+      z-index: 20;
+    }
+  }
+  @keyframes addOpen {
+    0% {
+      width: 80px;
+      height: 80px;
+    }
+    50% {
+      width: 25%;
+      height: 80px;
+    }
+    90% {
+      height: calc(100% - 50px);
+    }
+    100% {
+      width: 25%;
+      height: calc(100% - 50px);
+      z-index: 20;
+    }
+  }
+  @-webkit-keyframes addClose {
+    0% {
+      width: 25%;
+      height: calc(100% - 50px);
+      z-index: 20;
+    }
+    50% {
+      height: 80px;
+      width: 25%;
+    }
+    90% {
+      width: 80px;
+    }
+    100% {
+      width: 80px;
+      height: 80px;
+      z-index: 4;
+    }
+  }
+  @keyframes addClose {
+    0% {
+      width: 25%;
+      height: calc(100% - 50px);
+      z-index: 20;
+    }
+    50% {
+      height: 80px;
+      width: 25%;
+    }
+    90% {
+      width: 80px;
+    }
+    100% {
+      width: 80px;
+      height: 80px;
+      z-index: 4;
+    }
+  }
+}
+
 .container {
   position: absolute;
   top: 0;
@@ -158,277 +420,411 @@ button {
   width: 100vw;
   height: 100vh;
   background: #fff url("/media/background.png") center center repeat;
-  overflow: hidden; }
-  .container header {
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 140px;
-    z-index: 5; }
-    .container header .bigWave {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: block; }
-    .container header .smallWave {
-      display: none; }
-    .container header .logo, .container header .logoMobile {
-      position: absolute;
-      top: 7%;
-      left: 6%;
-      width: auto;
-      height: 70px; }
-    .container header .logo {
-      display: block; }
-    .container header .logoMobile {
-      display: none; }
-    .container header .currentDate {
-      position: absolute;
-      top: 14%;
-      right: 2%;
-      font-family: 'Palanquin Dark', sans-serif;
-      font-size: 1.2rem;
-      color: #fff; }
-  .container .main {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 2; }
-    .container .main h1 {
-      font-size: 7rem;
-      color: rgba(73, 73, 73, 0.1);
-      position: absolute;
-      top: 15%;
-      left: 7%; }
-    .container .main h2, .container .main h3 {
-      position: absolute;
-      top: 45%;
-      left: 50%;
-      margin-left: -13%;
-      width: 26%;
-      font-size: 1.1rem;
-      text-align: center;
-      opacity: .8; }
-    .container .main h3 {
-      top: 50%;
-      font-size: 0.9rem;
-      opacity: .5;
-      font-weight: 400; }
-    .container .main .tasks {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      padding: 240px 45% 6% 15%;
-      list-style-type: none;
-      overflow-y: scroll; }
-      .container .main .tasks .task {
-        position: relative;
-        width: 100%;
-        min-height: 75px;
-        margin-bottom: 20px;
-        padding-bottom: 15px;
-        background-color: white;
-        border-radius: 15px;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
-        z-index: 2;
-        transition: all 400ms ease-in-out;
-        animation: addTask 500ms ease-in-out;
-        overflow: hidden; }
-        .container .main .tasks .task .progressBar {
-          position: absolute;
-          height: 100%;
-          min-height: 75px;
-          border-radius: 15px;
-          transition: all 600ms ease-in-out; }
-        .container .main .tasks .task .taskPercentage, .container .main .tasks .task .taskDeadline, .container .main .tasks .task .taskName, .container .main .tasks .task .descriptionBtn {
-          position: relative;
-          display: inline-block;
-          z-index: 4;
-          max-width: calc(100% - 120px); }
-        .container .main .tasks .task .taskPercentage {
-          font-size: 1.1rem;
-          color: rgba(55, 55, 55, 0.6);
-          margin: 10px 30px; }
-        .container .main .tasks .task .taskDeadline, .container .main .tasks .task .descriptionBtn {
-          color: rgba(73, 73, 73, 0.8);
-          font-size: .9rem; }
-        .container .main .tasks .task .descriptionBtn {
-          margin: 0 30px;
-          color: rgba(73, 73, 73, 0.3);
-          cursor: pointer;
-          transition: all 200ms ease; }
-          .container .main .tasks .task .descriptionBtn:hover {
-            color: rgba(73, 73, 73, 0.8); }
-        .container .main .tasks .task .taskStart {
-          display: none; }
-        .container .main .tasks .task .taskName, .container .main .tasks .task .taskDescription {
-          font-weight: 500;
-          display: block;
-          margin: 0 30px;
-          line-height: 1.5rem;
-          font-size: .9rem; }
-        .container .main .tasks .task .taskDescription {
-          display: none;
-          font-size: .8rem;
-          color: rgba(73, 73, 73, 0.8);
-          margin: 5px 85px 0 45px; }
-        .container .main .tasks .task .taskFinished {
-          position: absolute;
-          top: 50%;
-          right: 25px;
-          transform: translateY(-50%);
-          width: 40px;
-          height: 40px;
-          z-index: 4;
-          border-radius: 50%;
-          background-color: #fff;
+  overflow: hidden;
+}
+
+.container header {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  z-index: 5;
+}
+
+.container header .bigWave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.container header .smallWave {
+  display: none;
+}
+
+.container header .logo, .container header .logoMobile {
+  position: absolute;
+  top: 7%;
+  left: 6%;
+  width: auto;
+  height: 70px;
+}
+
+.container header .logo {
+  display: block;
+}
+
+.container header .logoMobile {
+  display: none;
+}
+
+.container header .currentDate {
+  position: absolute;
+  top: 14%;
+  right: 2%;
+  font-family: 'Palanquin Dark', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.container .main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.container .main h1 {
+  font-size: 7rem;
+  color: rgba(73, 73, 73, 0.1);
+  position: absolute;
+  top: 15%;
+  left: 7%;
+}
+
+.container .main h2, .container .main h3 {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-left: -13%;
+  width: 26%;
+  font-size: 1.1rem;
+  text-align: center;
+  opacity: .8;
+}
+
+.container .main h3 {
+  top: 50%;
+  font-size: 0.9rem;
+  opacity: .5;
+  font-weight: 400;
+}
+
+.container .main .tasks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 240px 45% 6% 15%;
+  list-style-type: none;
+  overflow-y: scroll;
+}
+
+.container .main .tasks .task {
+  position: relative;
+  width: 100%;
+  min-height: 75px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  background-color: white;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
-          transition: transform 200ms ease-in-out; }
-          .container .main .tasks .task .taskFinished:hover {
-            transform: translateY(-50%) scale(1.15); }
-          .container .main .tasks .task .taskFinished img {
-            width: 20px;
-            height: 20px;
-            position: absolute;
-            top: 25%;
-            left: 25%;
-            opacity: .6;
-            pointer-events: none; }
-  .container .addPanel {
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    width: 80px;
-    height: 80px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 40px;
-    z-index: 4;
-    outline: none;
-    transition: all 200ms ease-in-out;
-    overflow: hidden; }
-    .container .addPanel:hover {
-      box-shadow: none; }
-    .container .addPanel img {
-      position: absolute;
-      bottom: 29px;
-      right: 29px;
-      width: 22px;
-      height: 22px;
-      transition: transform 300ms ease; }
-    .container .addPanel .addHandle {
-      position: absolute;
-      bottom: 0px;
-      right: 0px;
-      width: 80px;
-      height: 80px;
-      z-index: 14;
-      cursor: pointer; }
-    .container .addPanel .addContent {
-      position: absolute;
-      top: 70px;
-      left: 10%;
-      width: 80%;
-      padding: 0 5%;
-      opacity: 0; }
-      .container .addPanel .addContent h3 {
-        color: rgba(73, 73, 73, 0.5);
-        font-size: .8rem;
-        margin-bottom: 20px; }
-      .container .addPanel .addContent label {
-        font-size: .8rem; }
-      .container .addPanel .addContent input, .container .addPanel .addContent textarea {
-        width: 100%;
-        height: 40px;
-        margin-top: 5px;
-        margin-bottom: 20px;
-        padding-left: 5%;
-        border: none;
-        border-radius: 15px;
-        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
-        font-size: 0.8rem; }
-        .container .addPanel .addContent input::placeholder, .container .addPanel .addContent textarea::placeholder {
-          opacity: 0.4; }
-        .container .addPanel .addContent input::-webkit-clear-button, .container .addPanel .addContent input::-webkit-inner-spin-button, .container .addPanel .addContent textarea::-webkit-clear-button, .container .addPanel .addContent textarea::-webkit-inner-spin-button {
-          display: none; }
-        .container .addPanel .addContent input::-webkit-calendar-picker-indicator, .container .addPanel .addContent textarea::-webkit-calendar-picker-indicator {
-          color: rgba(255, 255, 255, 0);
-          width: 15px;
-          height: 15px;
-          background: #fff url("/media/calendar.svg") center center no-repeat;
-          background-size: contain;
-          margin-right: 10px;
-          opacity: .3;
-          transition: opacity 300ms ease; }
-          .container .addPanel .addContent input::-webkit-calendar-picker-indicator:hover, .container .addPanel .addContent textarea::-webkit-calendar-picker-indicator:hover {
-            opacity: .7; }
-      .container .addPanel .addContent textarea {
-        width: 100%;
-        height: 120px;
-        resize: none;
-        padding-top: 3%; }
-  .container .addSubmit, .container .reminder button {
-    position: relative;
-    display: block;
-    margin: 20px auto;
-    width: 60px;
-    height: 60px;
-    background-color: #fff;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
-    border-radius: 50%; }
-    .container .addSubmit img, .container .reminder button img {
-      position: absolute;
-      top: 34%;
-      left: 34%;
-      transform: rotate(0);
-      width: 20px;
-      height: auto; }
-  .container .reminder {
-    position: absolute;
-    bottom: 0;
-    right: 10%;
-    width: 20%;
-    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-    text-align: center;
-    box-shadow: 0px 0px 50px rgba(73, 73, 73, 0.4);
-    border-radius: 40px 40px 0 0;
-    z-index: 15;
-    opacity: 0;
-    transform: translateY(100%); }
-    .container .reminder h3 {
-      margin-top: 7%;
-      color: rgba(243, 0, 0, 0.7);
-      font-size: .9rem; }
-    .container .reminder .tasksNames {
-      margin: 10% 0;
-      font-weight: 600; }
-      .container .reminder .tasksNames p {
-        color: rgba(73, 73, 73, 0.8);
-        margin-bottom: 5px;
-        font-size: .8rem; }
-    .container .reminder button {
-      margin-bottom: 5%; }
+  z-index: 2;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+  -webkit-animation: addTask 500ms ease-in-out;
+          animation: addTask 500ms ease-in-out;
+  overflow: hidden;
+}
+
+.container .main .tasks .task .progressBar {
+  position: absolute;
+  height: 100%;
+  min-height: 75px;
+  border-radius: 15px;
+  -webkit-transition: all 600ms ease-in-out;
+  transition: all 600ms ease-in-out;
+}
+
+.container .main .tasks .task .taskPercentage, .container .main .tasks .task .taskDeadline, .container .main .tasks .task .taskName, .container .main .tasks .task .descriptionBtn {
+  position: relative;
+  display: inline-block;
+  z-index: 4;
+  max-width: calc(100% - 120px);
+}
+
+.container .main .tasks .task .taskPercentage {
+  font-size: 1.1rem;
+  color: rgba(55, 55, 55, 0.6);
+  margin: 10px 30px;
+}
+
+.container .main .tasks .task .taskDeadline, .container .main .tasks .task .descriptionBtn {
+  color: rgba(73, 73, 73, 0.8);
+  font-size: .9rem;
+}
+
+.container .main .tasks .task .descriptionBtn {
+  margin: 0 30px;
+  color: rgba(73, 73, 73, 0.3);
+  cursor: pointer;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.container .main .tasks .task .descriptionBtn:hover {
+  color: rgba(73, 73, 73, 0.8);
+}
+
+.container .main .tasks .task .taskStart {
+  display: none;
+}
+
+.container .main .tasks .task .taskName, .container .main .tasks .task .taskDescription {
+  font-weight: 500;
+  display: block;
+  margin: 0 30px;
+  line-height: 1.5rem;
+  font-size: .9rem;
+}
+
+.container .main .tasks .task .taskDescription {
+  display: none;
+  font-size: .8rem;
+  color: rgba(73, 73, 73, 0.8);
+  margin: 5px 85px 0 45px;
+}
+
+.container .main .tasks .task .taskFinished {
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  z-index: 4;
+  border-radius: 50%;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+  -webkit-transition: -webkit-transform 200ms ease-in-out;
+  transition: -webkit-transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+}
+
+.container .main .tasks .task .taskFinished:hover {
+  -webkit-transform: translateY(-50%) scale(1.15);
+          transform: translateY(-50%) scale(1.15);
+}
+
+.container .main .tasks .task .taskFinished img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  opacity: .6;
+  pointer-events: none;
+}
+
+.container .addPanel {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 80px;
+  height: 80px;
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 40px;
+  z-index: 4;
+  outline: none;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  overflow: hidden;
+}
+
+.container .addPanel:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.container .addPanel img {
+  position: absolute;
+  bottom: 29px;
+  right: 29px;
+  width: 22px;
+  height: 22px;
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+}
+
+.container .addPanel .addHandle {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 80px;
+  height: 80px;
+  z-index: 14;
+  cursor: pointer;
+}
+
+.container .addPanel .addContent {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 10%;
+  width: 80%;
+  padding: 0 5%;
+  opacity: 0;
+}
+
+.container .addPanel .addContent h3 {
+  color: rgba(73, 73, 73, 0.5);
+  font-size: .8rem;
+  margin-bottom: 20px;
+}
+
+.container .addPanel .addContent label {
+  font-size: .8rem;
+}
+
+.container .addPanel .addContent input, .container .addPanel .addContent textarea {
+  width: 100%;
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  padding-left: 5%;
+  border: none;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+  font-size: 0.8rem;
+}
+
+.container .addPanel .addContent input::-webkit-input-placeholder, .container .addPanel .addContent textarea::-webkit-input-placeholder {
+  opacity: 0.4;
+}
+
+.container .addPanel .addContent input:-ms-input-placeholder, .container .addPanel .addContent textarea:-ms-input-placeholder {
+  opacity: 0.4;
+}
+
+.container .addPanel .addContent input::-ms-input-placeholder, .container .addPanel .addContent textarea::-ms-input-placeholder {
+  opacity: 0.4;
+}
+
+.container .addPanel .addContent input::placeholder, .container .addPanel .addContent textarea::placeholder {
+  opacity: 0.4;
+}
+
+.container .addPanel .addContent input::-webkit-clear-button, .container .addPanel .addContent input::-webkit-inner-spin-button, .container .addPanel .addContent textarea::-webkit-clear-button, .container .addPanel .addContent textarea::-webkit-inner-spin-button {
+  display: none;
+}
+
+.container .addPanel .addContent input::-webkit-calendar-picker-indicator, .container .addPanel .addContent textarea::-webkit-calendar-picker-indicator {
+  color: rgba(255, 255, 255, 0);
+  width: 15px;
+  height: 15px;
+  background: #fff url("/media/calendar.svg") center center no-repeat;
+  background-size: contain;
+  margin-right: 10px;
+  opacity: .3;
+  -webkit-transition: opacity 300ms ease;
+  transition: opacity 300ms ease;
+}
+
+.container .addPanel .addContent input::-webkit-calendar-picker-indicator:hover, .container .addPanel .addContent textarea::-webkit-calendar-picker-indicator:hover {
+  opacity: .7;
+}
+
+.container .addPanel .addContent textarea {
+  width: 100%;
+  height: 120px;
+  resize: none;
+  padding-top: 3%;
+}
+
+.container .addSubmit, .container .reminder button {
+  position: relative;
+  display: block;
+  margin: 20px auto;
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+}
+
+.container .addSubmit img, .container .reminder button img {
+  position: absolute;
+  top: 34%;
+  left: 34%;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  width: 20px;
+  height: auto;
+}
+
+.container .reminder {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+  width: 20%;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 50px rgba(73, 73, 73, 0.4);
+          box-shadow: 0px 0px 50px rgba(73, 73, 73, 0.4);
+  border-radius: 40px 40px 0 0;
+  z-index: 15;
+  opacity: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.container .reminder h3 {
+  margin-top: 7%;
+  color: rgba(243, 0, 0, 0.7);
+  font-size: .9rem;
+}
+
+.container .reminder .tasksNames {
+  margin: 10% 0;
+  font-weight: 600;
+}
+
+.container .reminder .tasksNames p {
+  color: rgba(73, 73, 73, 0.8);
+  margin-bottom: 5px;
+  font-size: .8rem;
+}
+
+.container .reminder button {
+  margin-bottom: 5%;
+}
 
 @media screen and (max-width: 1500px) {
   .container .main .tasks {
-    padding: 240px 25% 6% 10%; } }
+    padding: 240px 25% 6% 10%;
+  }
+}
+
 @media screen and (max-width: 1030px) {
   .container .main h1 {
-    display: none; }
+    display: none;
+  }
   .container .main h2, .container .main h3 {
     width: 80%;
-    margin-left: -40%; }
+    margin-left: -40%;
+  }
   .container .main .tasks {
-    padding: 240px 10% 100px 10%; }
+    padding: 240px 10% 100px 10%;
+  }
   .container .addPanel {
     right: 50%;
     bottom: 15px;
@@ -436,107 +832,147 @@ button {
     height: 70px;
     margin-right: -35px;
     background-color: rgba(255, 255, 255, 0.4);
-    transition: all 400ms ease-in-out; }
-    .container .addPanel img {
-      bottom: 24px;
-      right: 24px; }
-    .container .addPanel .addContent {
-      top: 20%;
-      height: 80%; }
+    -webkit-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
+  }
+  .container .addPanel img {
+    bottom: 24px;
+    right: 24px;
+  }
+  .container .addPanel .addContent {
+    top: 20%;
+    height: 80%;
+  }
   .container .addOpened {
     right: 30%;
-    animation: none;
+    -webkit-animation: none;
+            animation: none;
     width: calc(40% + 70px);
     height: 70%;
     opacity: .93;
-    background-color: #fff; }
+    background-color: #fff;
+  }
   .container .addClosed {
-    animation: none;
+    -webkit-animation: none;
+            animation: none;
     width: 70px;
     height: 70px;
-    background-color: rgba(255, 255, 255, 0.4); }
+    background-color: rgba(255, 255, 255, 0.4);
+  }
   .container .reminder {
     right: 50%;
     margin-right: -17%;
-    width: 34%; } }
+    width: 34%;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .container header .bigWave {
-    display: none; }
+    display: none;
+  }
   .container header .smallWave {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: initial;
-    display: block; }
+    display: block;
+  }
   .container header .logo {
     top: 0;
-    height: 50px; }
+    height: 50px;
+  }
   .container header .currentDate {
     right: unset;
     left: 8%;
     top: 32%;
     font-size: .8rem;
-    color: rgba(255, 255, 255, 0.6); }
+    color: rgba(255, 255, 255, 0.6);
+  }
   .container .main .tasks {
-    padding: 150px 0 100px 0; }
-    .container .main .tasks .task {
-      border-radius: 0; }
-      .container .main .tasks .task .taskDescription {
-        font-size: .7rem; }
-      .container .main .tasks .task .progressBar {
-        border-radius: 0; }
-      .container .main .tasks .task .taskName {
-        font-size: 0.7rem;
-        line-height: 1.3rem;
-        max-width: calc(100% - 90px); }
-      .container .main .tasks .task .taskFinished {
-        right: 18px; }
+    padding: 150px 0 100px 0;
+  }
+  .container .main .tasks .task {
+    border-radius: 0;
+  }
+  .container .main .tasks .task .taskDescription {
+    font-size: .7rem;
+  }
+  .container .main .tasks .task .progressBar {
+    border-radius: 0;
+  }
+  .container .main .tasks .task .taskName {
+    font-size: 0.7rem;
+    line-height: 1.3rem;
+    max-width: calc(100% - 90px);
+  }
+  .container .main .tasks .task .taskFinished {
+    right: 18px;
+  }
   .container .addPanel .addContent {
-    overflow-y: auto; }
+    overflow-y: auto;
+  }
   .container .addOpened {
     right: 0;
     bottom: 0;
     border-radius: 0;
-    animation: none;
+    -webkit-animation: none;
+            animation: none;
     width: 100%;
     height: 100%;
     opacity: .93;
-    margin-right: 0; }
+    margin-right: 0;
+  }
   .container .addClosed {
-    animation: none;
+    -webkit-animation: none;
+            animation: none;
     width: 70px;
-    height: 70px; }
+    height: 70px;
+  }
   .container .reminder {
     right: 50%;
     margin-right: -50%;
-    width: 100%; } }
+    width: 100%;
+  }
+}
+
 @media only screen and (max-width: 823px) and (max-height: 700px) {
   .container .addPanel .addContent {
     top: 20%;
-    height: 80%; } }
+    height: 80%;
+  }
+}
+
 @media only screen and (max-width: 823px) and (orientation: landscape) {
   .container header .smallWave {
-    display: none; }
+    display: none;
+  }
   .container header .logo {
-    display: none; }
+    display: none;
+  }
   .container header .logoMobile {
     top: 0;
     left: 3%;
     height: 50px;
-    display: block; }
+    display: block;
+  }
   .container header .currentDate {
     top: 14%;
     left: unset;
     right: 2%;
-    color: #373737; }
+    color: #373737;
+  }
   .container .main h2 {
-    top: 40%; }
+    top: 40%;
+  }
   .container .main h3 {
-    top: 55%; }
+    top: 55%;
+  }
   .container .main .tasks {
-    padding: 100px 0 6% 0; }
+    padding: 100px 0 6% 0;
+  }
   .container .addPanel .addContent {
-    top: 100px; } }
-
+    top: 100px;
+  }
+}
 /*# sourceMappingURL=index.css.map */
