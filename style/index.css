@@ -163,13 +163,11 @@ button {
       height: calc(100% - 50px); }
     100% {
       width: 30%;
-      height: calc(100% - 50px);
-      z-index: 20; } }
+      height: calc(100% - 50px); } }
   @keyframes addClose {
     0% {
       width: 30%;
-      height: calc(100% - 50px);
-      z-index: 20; }
+      height: calc(100% - 50px); }
     50% {
       height: 80px;
       width: 30%; }
@@ -177,8 +175,7 @@ button {
       width: 80px; }
     100% {
       width: 80px;
-      height: 80px;
-      z-index: 4; } } }
+      height: 80px; } } }
 .container {
   position: absolute;
   top: 0;
@@ -368,7 +365,8 @@ button {
       left: 10%;
       width: 80%;
       padding: 0 5%;
-      opacity: 0; }
+      opacity: 0;
+      z-index: 20; }
       .container .addPanel .addContent h3 {
         color: rgba(73, 73, 73, 0.5);
         font-size: .8rem;
