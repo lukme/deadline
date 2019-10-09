@@ -97,14 +97,14 @@
             height: 80px;
         }
         50% {
-            width: 25%;
+            width: 30%;
             height: 80px;
         }
         90% {
             height: calc(100% - 50px);
         }
         100% {
-            width: 25%;
+            width: 30%;
             height: calc(100% - 50px);
             z-index: 20;
         }
@@ -112,13 +112,13 @@
     
     @keyframes addClose {
         0% {
-            width: 25%;
+            width: 30%;
             height: calc(100% - 50px);
             z-index: 20;
         }
         50% {
             height: 80px;
-            width: 25%;
+            width: 30%;
         }
         90% {
             width: 80px;

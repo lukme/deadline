@@ -55,7 +55,10 @@
                 <label for="taskName">Task Name:</label>
                 <input type="text" id="taskName">
                 <label for="deadline">Deadline:</label>
-                <input type="date" id="deadline">
+                <div class="deadlineInput">
+                    <input type="date" id="deadline">
+                    <input type="time" id="deadline">
+                </div>
                 <!-- <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Deadline"> -->
                 <label for="textarea">Task description:</label>
                 <textarea id="textarea" placeholder="Optional"></textarea>

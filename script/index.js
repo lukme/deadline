@@ -8,7 +8,8 @@ let ul = document.querySelector('.tasks'),
     descriptionCount = false,
     taskData = [
         document.querySelector('.addContent').children[2], // Name
-        document.querySelector('.addContent').children[4], // Deadline
+        document.querySelector('.addContent').children[4].children[0], // Deadline
+        document.querySelector('.addContent').children[4].children[1], // Deadline Time
         document.querySelector('.addContent').children[6] // Description
     ],
     actualDatePara = document.querySelector('.currentDate'),
@@ -36,7 +37,8 @@ class Task {
     constructor() {
         this.name = document.querySelector('.addContent').children[2].value;
         this.start = Date.now();
-        this.deadline = document.querySelector('.addContent').children[4].value;
+        this.deadline = document.querySelector('.addContent').children[4].children[0].value;
+        this.deadlineTime = document.querySelector('.addContent').children[4].children[1].value;
         this.description = document.querySelector('.addContent').children[6].value;
     }
 }
@@ -59,6 +61,7 @@ class AddTask {
             percentage = document.createElement('P'),
             start = document.createElement('P'),
             deadline = document.createElement('P'),
+            deadlineTime = document.createElement('P'),
             name = document.createElement('P'),
             descriptionBtn = document.createElement('P'),
             description = document.createElement('P'),
@@ -70,6 +73,7 @@ class AddTask {
         percentage.classList.add('taskPercentage');
         start.classList.add('taskStart');
         deadline.classList.add('taskDeadline');
+        deadlineTime.classList.add('taskDeadlineTime');
         name.classList.add('taskName');
         description.classList.add('taskDescription');
         descriptionBtn.classList.add('descriptionBtn');
@@ -85,22 +89,25 @@ class AddTask {
         description.innerText = el.description;
         start.innerText = el.start;
         deadline.innerText = endDate;
+        deadlineTime.innerText = el.deadlineTime;
         li.appendChild(div);
         li.appendChild(percentage);
         li.appendChild(start);
         li.appendChild(deadline);
+        li.appendChild(deadlineTime);
         (el.description) ? li.appendChild(descriptionBtn) : null;
         li.appendChild(name);
         li.appendChild(description);
         li.appendChild(finishedBtn);
         ul.insertBefore(li, ul.children[0]);
-        descriptionBtn.addEventListener('click', function(e) {
+        descriptionBtn.addEventListener('click', function (e) {
             Description.showDescription(e)
         })
 
         // Clear the inputs
         taskData.forEach(el => {
             el.value = "";
+            document.querySelector('.addContent').children[4].children[1].value = "08:00";
         });
         saveToLocalStorage()
         updateDates();
@@ -118,13 +125,13 @@ class RemoveElement {
 
 class Description {
     static showDescription(e) {
-        
+
         if (!descriptionCount) {
             descriptionCount = !descriptionCount;
-            e.target.parentElement.children[6].style.display = "block";
+            e.target.parentElement.children[7].style.display = "block";
         } else {
             descriptionCount = !descriptionCount;
-            e.target.parentElement.children[6].style.display = "none";            
+            e.target.parentElement.children[7].style.display = "none";
         }
     }
 }
@@ -157,7 +164,7 @@ class InitApp {
         this.addTask = new AddTask();
         this.reminder = new Reminder();
         this.initAddBtn = document.querySelector('.addSubmit').addEventListener('click', () => {
-            if (document.querySelector('.addContent').children[2].value && document.querySelector('.addContent').children[4].value) {
+            if (document.querySelector('.addContent').children[2].value && document.querySelector('.addContent').children[4].children[0].value) {
                 this.addTask.createObject();
                 this.addTask.createElements(el);
             } else { alert("Please input both task name and deadline") };
@@ -170,7 +177,7 @@ class InitApp {
             this.reminder.showTomorrows();
             if (reminderTasks.children[0] !== undefined) {
                 reminder.style.animation = "reminderSlideIn 2000ms ease-in-out forwards";
-                reminder.children[2].addEventListener('click', function() {
+                reminder.children[2].addEventListener('click', function () {
                     this.parentNode.style.animation = "reminderSlideOut 600ms ease-in-out forwards"
                 })
             }
@@ -184,13 +191,17 @@ function updateDates() {
     li.forEach((el) => {
         const buildInStartSeconds = el.children[2].innerText,
             deadline = new Date(`${el.children[3].innerText.slice(3, 5)}/${el.children[3].innerText.slice(0, 2)}/${el.children[3].innerText.slice(6, 10)}`),
-            deadlineSeconds = Date.parse(deadline);
-        today = Date.now(),
 
-        buildInDifference = deadlineSeconds - buildInStartSeconds,
-        realDifference = (deadlineSeconds - today);
-        percentDifference = (realDifference / buildInDifference) * 100;
-        percentValue = (100 - Math.floor(percentDifference));
+            deadlineTime = (el.children[4].innerText.slice(0, 2) * 3600000) + (el.children[4].innerText.slice(3, 5) * 60000),
+
+            deadlineSeconds = Date.parse(deadline) + deadlineTime,
+
+            today = Date.now(),
+
+            buildInDifference = deadlineSeconds - buildInStartSeconds,
+            realDifference = (deadlineSeconds - today),
+            percentDifference = (realDifference / buildInDifference) * 100,
+            percentValue = (100 - Math.floor(percentDifference));
 
         if (percentValue <= 40) {
             el.children[0].style.backgroundColor = "rgba(64, 221, 127, .55)";
@@ -243,3 +254,4 @@ function getFromLocalStorage() {
 const initApp = new InitApp;
 window.onload = updateDates;
 setInterval(updateDates, 10000);
+document.querySelector('.addContent').children[4].children[1].value = "08:00";
