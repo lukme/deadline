@@ -204,7 +204,6 @@
             width: 80%;
             padding: 0 5%;
             opacity: 0;
-            z-index: 20;
             h3 {
                 color: rgba($gray, .5);
                 font-size: .8rem;
@@ -424,11 +423,13 @@
             height: 100%;
             opacity: .93;
             margin-right: 0;
+            z-index: 20;
         }
         .addClosed {
             animation: none;
             width: 70px;
             height: 70px;
+            z-index: 3;
         }
         .reminder {
             right: 50%;
