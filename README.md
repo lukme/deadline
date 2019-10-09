@@ -4,8 +4,6 @@
 
 > DeadLine is a work menagement aplication made to help you prioritize your tasks
 
---- Project in development
-
 ## About project
 Deadline was created due to small amount of apps that help you visualize how much time do you still have to acomplish your goals, finish your work projects, or even do your homework. Although DeadLine is based on localStorage, therefore you can not save your tasks on the server, you can still use it and it will store all your tasks in the device you are working on.
 
@@ -13,7 +11,7 @@ Deadline was created due to small amount of apps that help you visualize how muc
 * JavaScript
 * SCSS
 * HTML
-* Graphics made with Figma
+* All graphics made with Figma
 
 ## Status
 Project finished and stable.
