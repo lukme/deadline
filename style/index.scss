@@ -342,7 +342,6 @@
                 right: 24px;
             }
             .addContent {
-                top: 20%;
                 height: 80%;
             }
         }
@@ -413,8 +412,6 @@
             }
         }
         .addPanel .addContent {
-            // top: 170px;
-            // height: 70%;
             overflow-y: auto;
         }
         .addOpened {
@@ -445,7 +442,6 @@
     .container {
         .addPanel {
             .addContent {
-                top: 20%;
                 height: 80%;
             }
         }
@@ -484,11 +480,6 @@
             }
             .tasks {
                 padding: 100px 0 6% 0;
-            }
-        }
-        .addPanel {
-            .addContent {
-                top: 100px;
             }
         }
     }
