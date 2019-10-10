@@ -489,9 +489,9 @@ button {
 
 .container .main h1 {
   font-size: 7rem;
-  color: rgba(73, 73, 73, 0.1);
+  color: rgba(73, 73, 73, 0.05);
   position: absolute;
-  top: 15%;
+  top: 150px;
   left: 7%;
 }
 

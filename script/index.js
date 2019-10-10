@@ -150,7 +150,7 @@ class Reminder {
     }
     showTomorrows() {
         reminderTasks.innerText = [];
-        (this.tomorrowDeadlines.length > 1) ? reminder.children[0].innerText = 'You have deadlines tomorrow!' : null;
+        (this.tomorrowDeadlines.length > 1) ? reminder.children[0].innerText = 'You have deadlines soon!' : null;
         this.tomorrowDeadlines.forEach((el) => {
             const reminderObj = document.createElement('P');
             reminderObj.innerText = el.name;
