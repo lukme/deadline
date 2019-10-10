@@ -16,10 +16,11 @@ The project was created due to small amount of apps that help us visualize how m
 * JavaScript
 * SCSS
 * HTML
-* All graphics made with Figma
+
+All graphics made with Figma
 
 ## Status
 Project finished and stable.
 
 ## Contact
-Designed and developed by [Lucas Mecfal](mailto:lukme00@gmail.com). Please go ahead and contact me :) 
+Designed and developed by [Lucas Mecfal](mailto:lukme00@gmail.com). Please feel free to contact me :) 
