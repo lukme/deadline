@@ -145,8 +145,10 @@ class Reminder {
     checkTomorrow(el) {
         const today = Date.now(),
             oneDay = 86400000,
-            deadline = Date.parse(el.deadline);
-        ((deadline - today) <= oneDay) ? this.tomorrowDeadlines.push(el) : null;
+            deadlineInit = new Date((`${el.deadline.slice(5,7)}/${el.deadline.slice(8,10)}/${el.deadline.slice(0,4)}`)),
+            deadlineTime = (el.deadlineTime.slice(0, 2) * 3600000) + (el.deadlineTime.slice(3, 5) * 60000),
+            deadline = Date.parse(deadlineInit) + deadlineTime;
+        ((deadline - today) <= oneDay && (deadline - today) > 0) ? this.tomorrowDeadlines.push(el) : null;
     }
     showTomorrows() {
         reminderTasks.innerText = [];
@@ -193,6 +195,8 @@ function updateDates() {
             deadline = new Date(`${el.children[3].innerText.slice(3, 5)}/${el.children[3].innerText.slice(0, 2)}/${el.children[3].innerText.slice(6, 10)}`),
 
             deadlineTime = (el.children[4].innerText.slice(0, 2) * 3600000) + (el.children[4].innerText.slice(3, 5) * 60000),
+
+            TEMP = Date.parse(deadline);
 
             deadlineSeconds = Date.parse(deadline) + deadlineTime,
 
