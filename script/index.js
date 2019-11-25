@@ -95,7 +95,7 @@ class AddTask {
         li.appendChild(start);
         li.appendChild(deadline);
         li.appendChild(deadlineTime);
-        (el.description) ? li.appendChild(descriptionBtn) : null;
+        (el.description) ? li.appendChild(descriptionBtn): null;
         li.appendChild(name);
         li.appendChild(description);
         li.appendChild(finishedBtn);
@@ -148,11 +148,11 @@ class Reminder {
             deadlineInit = new Date((`${el.deadline.slice(5,7)}/${el.deadline.slice(8,10)}/${el.deadline.slice(0,4)}`)),
             deadlineTime = (el.deadlineTime.slice(0, 2) * 3600000) + (el.deadlineTime.slice(3, 5) * 60000),
             deadline = Date.parse(deadlineInit) + deadlineTime;
-        ((deadline - today) <= oneDay && (deadline - today) > 0) ? this.tomorrowDeadlines.push(el) : null;
+        ((deadline - today) <= oneDay && (deadline - today) > 0) ? this.tomorrowDeadlines.push(el): null;
     }
     showTomorrows() {
         reminderTasks.innerText = [];
-        (this.tomorrowDeadlines.length > 1) ? reminder.children[0].innerText = 'You have deadlines soon!' : null;
+        (this.tomorrowDeadlines.length > 1) ? reminder.children[0].innerText = 'You have deadlines soon!': null;
         this.tomorrowDeadlines.forEach((el) => {
             const reminderObj = document.createElement('P');
             reminderObj.innerText = el.name;
@@ -169,7 +169,17 @@ class InitApp {
             if (document.querySelector('.addContent').children[2].value && document.querySelector('.addContent').children[4].children[0].value) {
                 this.addTask.createObject();
                 this.addTask.createElements(el);
-            } else { alert("Please input both task name and deadline") };
+            } else {
+                alert("Please input both task name and deadline")
+            };
+        });
+        this.initAddBtn = document.querySelector('.addSubmit').addEventListener('keyup', () => {
+            if (document.querySelector('.addContent').children[2].value && document.querySelector('.addContent').children[4].children[0].value) {
+                this.addTask.createObject();
+                this.addTask.createElements(el);
+            } else {
+                alert("Please input both task name and deadline")
+            };
         });
         if (tasks.length > 0) {
             tasks.forEach((el) => {
@@ -198,7 +208,7 @@ function updateDates() {
 
             TEMP = Date.parse(deadline);
 
-            deadlineSeconds = Date.parse(deadline) + deadlineTime,
+        deadlineSeconds = Date.parse(deadline) + deadlineTime,
 
             today = Date.now(),
 
@@ -249,7 +259,7 @@ function saveToLocalStorage() {
 }
 
 function getFromLocalStorage() {
-    if (localStorage.getItem('tasks') !== '[]') {
+    if (localStorage.getItem('tasks') !== '[]' && localStorage.getItem('tasks') !== null) {
         const elements = localStorage.getItem('tasks');
         tasks = JSON.parse(elements);
     }
